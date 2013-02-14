@@ -9,7 +9,8 @@ set ruler
 set printoptions=paper:letter,left:5pc,right:5pc,top:5pc,bottom:5pc,number:y
 au VimLeave * :!clear
 
-"colorscheme phd
+set guifont=Monaco:h12
+
 if ! has("gui_running")
     set t_Co=256
 endif
@@ -17,15 +18,16 @@ endif
 
 syntax on
 " feel free to choose :set background=light for a different style
-if has('gui_running')
-    set background=light
-    colorscheme solarized  
-else
-    set background=dark
-    colorscheme matlablight
-endif
-"set background=dark
+"if has('gui_running')
+"    set background=dark "light
+"    colorscheme solarized  
+"else
+"    set background=dark
+"    colorscheme matlablight
+"endif
+set background=light
 "let g:solarized_termcolors = 256
+colorscheme solarized
 
 " Status Line *****************************************************************
 set showcmd

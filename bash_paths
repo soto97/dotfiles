@@ -1,4 +1,9 @@
-export PATH="/Library/Frameworks/Python.framework/Versions/Current/bin:/usr/local/bin:/usr/local/git/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Users/asoto/bin:/Users/asoto/dotfiles/bin:/Users/asoto/.rvm/bin"
+
+# bash_paths
+
+export PATH="/usr/local/bin:/usr/local/share/python:/usr/local/git/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Users/asoto/bin:/Users/asoto/dotfiles/bin:/Users/asoto/.rvm/bini"
+
+export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
 

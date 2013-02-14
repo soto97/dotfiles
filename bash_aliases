@@ -18,6 +18,7 @@ alias ssh='ssh'
 
 # Application aliases
 alias gvim='mvim'
+alias ncview='ncview -no_auto_overlay'
 
 # Machine aliases
 alias sierra='ssh asoto@sierra.gps.caltech.edu'  # ssh into sierra at GPS at Caltech

@@ -18,7 +18,7 @@ export CLICOLOR=1
 # lowercase is bold
  export LSCOLORS=ExFxBxDxCxegedabagacad
 
-
 MKL_NUM_THREADS=1
 export MKL_NUM_THREADS
  
+source `brew --prefix`/Library/Contributions/brew_bash_completion.sh
