@@ -2,6 +2,12 @@
 
 # bash_profile
 
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+    . /etc/bashrc
+fi
+
 declare -a files=(
     $HOME/dotfiles/bash_config    # Configuration
     $HOME/dotfiles/bash_aliases    # Aliases
