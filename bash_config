@@ -22,3 +22,6 @@ MKL_NUM_THREADS=1
 export MKL_NUM_THREADS
  
 source `brew --prefix`/Library/Contributions/brew_bash_completion.sh
+
+# Define the GRADS script folder
+export GASCRP=$HOME/bighorn
