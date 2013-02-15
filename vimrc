@@ -18,7 +18,7 @@ endif
 syntax on
 " feel free to choose :set background=light for a different style
 if has('gui_running')
-    set background=light
+    set background=dark
     colorscheme solarized  
 else
     set background=dark
