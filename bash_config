@@ -18,7 +18,21 @@ export CLICOLOR=1
 # lowercase is bold
  export LSCOLORS=ExFxBxDxCxegedabagacad
 
-
 MKL_NUM_THREADS=1
 export MKL_NUM_THREADS
  
+source `brew --prefix`/Library/Contributions/brew_bash_completion.sh
+
+# Define the GRADS script folder
+export GASCRP=$HOME/bighorn
+
+
+SSHAGENT=/usr/bin/ssh-agent
+SSHAGENTARGS="-s"
+if [ -z "$SSH_AUTH_SOCK" -a -x "$SSHAGENT" ]; then
+	  eval `$SSHAGENT $SSHAGENTARGS`
+	    trap "kill $SSH_AGENT_PID" 0
+	fi
+
+
+

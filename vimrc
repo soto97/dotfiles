@@ -9,7 +9,8 @@ set ruler
 set printoptions=paper:letter,left:5pc,right:5pc,top:5pc,bottom:5pc,number:y
 au VimLeave * :!clear
 
-"colorscheme phd
+set guifont=Monaco:h12
+
 if ! has("gui_running")
     set t_Co=256
 endif
@@ -22,10 +23,11 @@ if has('gui_running')
     colorscheme solarized  
 else
     set background=dark
-    colorscheme matlablight
+    colorscheme solarized
 endif
 "set background=dark
 "let g:solarized_termcolors = 256
+colorscheme solarized
 
 " Status Line *****************************************************************
 set showcmd
