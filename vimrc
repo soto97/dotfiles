@@ -19,10 +19,10 @@ endif
 syntax on
 " feel free to choose :set background=light for a different style
 if has('gui_running')
-    set background=dark
+    set background=light
     colorscheme solarized  
 else
-    set background=dark
+    set background=light
     colorscheme solarized
 endif
 "set background=dark
