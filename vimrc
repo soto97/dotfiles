@@ -18,14 +18,14 @@ endif
 
 syntax on
 " feel free to choose :set background=light for a different style
-"if has('gui_running')
-"    set background=dark "light
-"    colorscheme solarized  
-"else
-"    set background=dark
-"    colorscheme matlablight
-"endif
-set background=light
+if has('gui_running')
+    set background=light
+    colorscheme solarized  
+else
+    set background=light
+    colorscheme solarized
+endif
+"set background=dark
 "let g:solarized_termcolors = 256
 colorscheme solarized
 
