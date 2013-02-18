@@ -20,8 +20,18 @@ export CLICOLOR=1
 
 MKL_NUM_THREADS=1
 export MKL_NUM_THREADS
- 
-source `brew --prefix`/Library/Contributions/brew_bash_completion.sh
+
+platform='unknown'
+unamestr=`uname`
+if [[ "$unamestr" == 'Linux' ]]; then
+    platform='linux'
+elif [[ "$unamestr" == 'Darwin' ]]; then
+    platform='Darwin'
+fi
+
+if [[ $platform == 'Darwin' ]]; then
+    source `brew --prefix`/Library/Contributions/brew_bash_completion.sh
+fi
 
 # Define the GRADS script folder
 export GASCRP=$HOME/bighorn
