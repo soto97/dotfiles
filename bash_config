@@ -22,7 +22,7 @@ MKL_NUM_THREADS=1
 export MKL_NUM_THREADS
 
 platform='unknown'
-unamestr=`uname`
+unamestr=$(uname)
 if [[ "$unamestr" == 'Linux' ]]; then
     platform='linux'
 elif [[ "$unamestr" == 'Darwin' ]]; then
