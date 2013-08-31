@@ -45,4 +45,3 @@ if [ -z "$SSH_AUTH_SOCK" -a -x "$SSHAGENT" ]; then
 	fi
 
 
-

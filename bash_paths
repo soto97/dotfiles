@@ -1,9 +1,22 @@
 
 # bash_paths
+export NCARG_ROOT=/Users/asoto/bin/ncl_ncarg-5.2.1.MacOS_10.5_i386_nodap_gcc401                                  
+export PATH="$NCARG_ROOT/bin:/Library/Frameworks/Python.framework/Versions/Current/bin:/usr/local/bin:/usr/local/git/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Users/asoto/bin:/Users/asoto/dotfiles/bin:/Users/asoto/.rvm/bin:/usr/local/lib/python2.7/site-packages:/usr/local/lib/python2.7/site-packages"
 
-export PATH="/Library/Frameworks/Python.framework/Versions/Current/bin:/usr/local/bin:/usr/local/git/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Users/asoto/bin:/Users/asoto/dotfiles/bin:/Users/asoto/.rvm/bin:$PATH"
+export PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
 
-export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
+NETCDF="/usr/local/"
+export NETCDF
+JASPERLIB="/usr/local/lib/"
+export JASPERLIB
+JASPERINC="/usr/local/include/jasper/"
+export JASPERINC
+FC="/usr/local/bin/gfortran"
+export FC
+F90="/usr/local/bin/gfortran"
+export F90
+WRFIO_NCD_LARGE_FILE_SUPPORT=1
+export WRFIO_NCD_LARGE_FILE_SUPPORT
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
 

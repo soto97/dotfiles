@@ -13,6 +13,7 @@ declare -a files=(
     $HOME/dotfiles/bash_aliases    # Aliases
     $HOME/dotfiles/bash_prompt    # Custom bash prompt
     $HOME/dotfiles/bash_paths    # Path modifications
+    $HOME/dotfiles/bash_functions # Short functions for shell work
 )
 
 # If these files are readable, source them
