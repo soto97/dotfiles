@@ -1,47 +1,64 @@
 #!/bin/bash
 
-# bash_config
-
-# Make MacVim the visual editor
-export VISUAL='mvim -f'
-
-# Make vim the default editor
-export EDITOR="vim"
-
-# make ls display colors, reinforce with CLICOLOR and LSCOLORS
-export CLICOLOR=1
- 
-# LSCOLORS order: DIR, SYM_LINK, SOCKET, PIPE, EXE, BLOCK_SP
-# CHAR_SP, EXE_SUID, EXE_GUID, DIR_STICKY, DIR_WO_STICKY
-# a = black, b = red, c = green, d = brown, e = blue,
-# f = magenta g = cyan, h = light gray, x = default
-# lowercase is bold
- export LSCOLORS=ExFxBxDxCxegedabagacad
-
-MKL_NUM_THREADS=1
-export MKL_NUM_THREADS
-
 platform='unknown'
 unamestr=$(uname)
 if [[ "$unamestr" == 'Linux' ]]; then
     platform='linux'
 elif [[ "$unamestr" == 'Darwin' ]]; then
-    platform='Darwin'
+    platform='osx'
 fi
 
-if [[ $platform == 'Darwin' ]]; then
+# bash_config
+
+if [[ $platform == 'osx' ]]; then
+    export VISUAL='mvim -f'   # Make MacVim the visual editor
+    export EDITOR="vim"   # Make vim the default editor
+    # make ls display colors, reinforce with CLICOLOR and LSCOLORS
+    export CLICOLOR=1
+ 
+    # LSCOLORS order: DIR, SYM_LINK, SOCKET, PIPE, EXE, BLOCK_SP
+    # CHAR_SP, EXE_SUID, EXE_GUID, DIR_STICKY, DIR_WO_STICKY
+    # a = black, b = red, c = green, d = brown, e = blue,
+    # f = magenta g = cyan, h = light gray, x = default
+    # lowercase is bold
+     export LSCOLORS=ExFxBxDxCxegedabagacad
+
+    MKL_NUM_THREADS=1
+    export MKL_NUM_THREADS
+
     source `brew --prefix`/Library/Contributions/brew_bash_completion.sh
-fi
 
-# Define the GRADS script folder
-export GASCRP=$HOME/bighorn
-
-
-SSHAGENT=/usr/bin/ssh-agent
-SSHAGENTARGS="-s"
-if [ -z "$SSH_AUTH_SOCK" -a -x "$SSHAGENT" ]; then
-	  eval `$SSHAGENT $SSHAGENTARGS`
-	    trap "kill $SSH_AGENT_PID" 0
+    SSHAGENT=/usr/bin/ssh-agent
+    SSHAGENTARGS="-s"
+    if [ -z "$SSH_AUTH_SOCK" -a -x "$SSHAGENT" ]; then
+    	  eval `$SSHAGENT $SSHAGENTARGS`
+    	    trap "kill $SSH_AGENT_PID" 0
 	fi
 
+elif [[ $platform == 'linux' ]]; then
+    export EDITOR="vim"   # Make vim the default editor
+    # make ls display colors, reinforce with CLICOLOR and LSCOLORS
+    export CLICOLOR=1
+ 
+    # LSCOLORS order: DIR, SYM_LINK, SOCKET, PIPE, EXE, BLOCK_SP
+    # CHAR_SP, EXE_SUID, EXE_GUID, DIR_STICKY, DIR_WO_STICKY
+    # a = black, b = red, c = green, d = brown, e = blue,
+    # f = magenta g = cyan, h = light gray, x = default
+    # lowercase is bold
+    export LSCOLORS=ExFxBxDxCxegedabagacad
+
+    MKL_NUM_THREADS=1
+    export MKL_NUM_THREADS
+
+    # Define the GRADS script folder
+    export GASCRP=$HOME/bighorn
+
+    SSHAGENT=/usr/bin/ssh-agent
+    SSHAGENTARGS="-s"
+    if [ -z "$SSH_AUTH_SOCK" -a -x "$SSHAGENT" ]; then
+    	  eval `$SSHAGENT $SSHAGENTARGS`
+    	    trap "kill $SSH_AGENT_PID" 0
+	fi
+
+fi
 
