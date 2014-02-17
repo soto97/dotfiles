@@ -11,7 +11,7 @@ The install script will:
 # Installation
 
 ```
-git clone git://github.com/michaeljsmalley/dotfiles ~/dotfiles
+git clone git://github.com/soto97/dotfiles ~/dotfiles
 cd ~/dotfiles
 ./makesymlinks.sh
 ```

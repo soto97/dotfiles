@@ -13,6 +13,7 @@ declare -a files=(
     $HOME/dotfiles/bash_aliases    # Aliases
     $HOME/dotfiles/bash_prompt    # Custom bash prompt
     $HOME/dotfiles/bash_paths    # Path modifications
+    $HOME/dotfiles/bash_functions # Short functions for shell work
 )
 
 # If these files are readable, source them
@@ -24,3 +25,8 @@ do
 done
 
 unset files
+
+
+PROMPT_TITLE='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}:${PWD/#$HOME/~}\007"'
+export PROMPT_COMMAND="${PROMPT_COMMAND} ${PROMPT_TITLE}; "
+

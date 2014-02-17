@@ -14,7 +14,7 @@ alias lt='ls -ltrh '              # sort by date\
 alias lm='ls -al | less'         # pipe through 'less'\
 
 # turn on xhost for ssh sessions
-alias ssh='ssh'
+alias ssh='ssh -X'
 
 # Application aliases
 alias gvim='mvim'
