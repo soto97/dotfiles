@@ -1,5 +1,13 @@
 #!/bin/bash
 
+platform='unknown'
+unamestr=`uname`
+if [[ "$unamestr" == 'Linux' ]]; then
+   platform='linux'
+elif [[ "$unamestr" == 'Darwin' ]]; then
+   platform='osx'
+fi
+
 # bash_aliases
 
 # Directory related aliases
@@ -17,10 +25,20 @@ alias lm='ls -al | less'         # pipe through 'less'\
 alias ssh='ssh -X'
 
 # Application aliases
-alias gvim='mvim'
 alias ncview='ncview -no_auto_overlay'
 
 # Machine aliases
-alias sierra='ssh asoto@sierra.gps.caltech.edu'  # ssh into sierra at GPS at Caltech
 alias pleiades='ssh asoto1@pfe'    # ssh into Pleiades at NASA Ames
+
+
+# OS specific aliases
+
+if [[ $platform == 'osx' ]]; then
+	alias gvim='mvim'
+elif [[ $platform == 'linux' ]]; then
+	alias gvim='vim'
+fi
+
+
+
 
