@@ -1,22 +1,44 @@
-
 # bash_paths
-export NCARG_ROOT=/Users/asoto/bin/ncl_ncarg-5.2.1.MacOS_10.5_i386_nodap_gcc401                                  
-export PATH="$NCARG_ROOT/bin:/usr/local/bin:/usr/local/git/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Users/asoto/bin:/Users/asoto/bin/janus-scripts:/Users/asoto/dotfiles/bin:/Users/asoto/.rvm/bin:/usr/local/lib/python2.7/site-packages:/usr/local/lib/python2.7/site-packages"
 
-export PYTHONPATH="/usr/local/lib/python2.7/site-packages:/Users/asoto/bin/my_python_modules:$PYTHONPATH"
+platform='unknown'
+unamestr=`uname`
+if [[ "$unamestr" == 'Linux' ]]; then
+   platform='linux'
+elif [[ "$unamestr" == 'Darwin' ]]; then
+   platform='osx'
+fi
 
-NETCDF="/usr/local/"
-export NETCDF
-JASPERLIB="/usr/local/lib/"
-export JASPERLIB
-JASPERINC="/usr/local/include/jasper/"
-export JASPERINC
-FC="/usr/local/bin/gfortran"
-export FC
-F90="/usr/local/bin/gfortran"
-export F90
-WRFIO_NCD_LARGE_FILE_SUPPORT=1
-export WRFIO_NCD_LARGE_FILE_SUPPORT
+if [[ $platform == 'osx' ]]; then
+  
+  export NCARG_ROOT=/Users/asoto/bin/ncl_ncarg-5.2.1.MacOS_10.5_i386_nodap_gcc401                                  
+  export PATH="$NCARG_ROOT/bin:/usr/local/bin:/usr/local/git/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Users/asoto/bin:/Users/asoto/bin/janus-scripts:/Users/asoto/dotfiles/bin:/Users/asoto/.rvm/bin:/usr/local/lib/python2.7/site-packages:/usr/local/lib/python2.7/site-packages"
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
+  export PYTHONPATH="/usr/local/lib/python2.7/site-packages:/Users/asoto/bin/my_python_modules:$PYTHONPATH"
+
+  NETCDF="/usr/local/"
+  export NETCDF
+  JASPERLIB="/usr/local/lib/"
+  export JASPERLIB
+  JASPERINC="/usr/local/include/jasper/"
+  export JASPERINC
+  FC="/usr/local/bin/gfortran"
+  export FC
+  F90="/usr/local/bin/gfortran"
+  export F90
+  WRFIO_NCD_LARGE_FILE_SUPPORT=1
+  export WRFIO_NCD_LARGE_FILE_SUPPORT
+
+  [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
+
+elif [[ $platform == 'linux' ]]; then
+  
+  export PATH="/Library/Frameworks/Python.framework/Versions/Current/bin:/usr/local/bin:/usr/local/git/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bi    n:/Users/asoto/bin:/Users/asoto/dotfiles/bin:/Users/asoto/.rvm/bin:/home/asoto/bin:$PATH"
+                                                                           
+  export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH       
+                                                                            
+  [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
+
+fi
+
+
 
