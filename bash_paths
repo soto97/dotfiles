@@ -1,9 +1,9 @@
 
 # bash_paths
 export NCARG_ROOT=/Users/asoto/bin/ncl_ncarg-5.2.1.MacOS_10.5_i386_nodap_gcc401                                  
-export PATH="$NCARG_ROOT/bin:/usr/local/bin:/usr/local/git/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Users/asoto/bin:/Users/asoto/dotfiles/bin:/Users/asoto/.rvm/bin:/usr/local/lib/python2.7/site-packages:/usr/local/lib/python2.7/site-packages"
+export PATH="$NCARG_ROOT/bin:/usr/local/bin:/usr/local/git/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Users/asoto/bin:/Users/asoto/bin/janus-scripts:/Users/asoto/dotfiles/bin:/Users/asoto/.rvm/bin:/usr/local/lib/python2.7/site-packages:/usr/local/lib/python2.7/site-packages"
 
-export PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
+export PYTHONPATH="/usr/local/lib/python2.7/site-packages:/Users/asoto/bin/my_python_modules:$PYTHONPATH"
 
 NETCDF="/usr/local/"
 export NETCDF
