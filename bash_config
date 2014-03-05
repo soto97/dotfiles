@@ -65,6 +65,18 @@ elif [[ $platform == 'linux' ]]; then
     	  eval `$SSHAGENT $SSHAGENTARGS`
     	    trap "kill $SSH_AGENT_PID" 0
 	fi
+    
+	# The following exports are for the Titan mesoscale WRF.
+	export HDF5LIB_fOR_NETCDF=/usr/lib64/hdf5/lib;
+	export NETCDF=/usr/lib64/netcdf4_c;
+	export WRFIO_NCD_LARGE_FILE_SUPPORT=1;
+	export JASPERLIB=/usr/lib64;
+	export JASPERINC=/usr/include/jasper;
+	export WRF_CHEM=1;
+	export WRF_KPP=0;
+    export WRF_TITAN=1;
+
+
 
 fi
 
