@@ -35,10 +35,6 @@ if [[ $platform == 'osx' ]]; then
     	    trap "kill $SSH_AGENT_PID" 0
 	fi
     
-	export WRF_TITAN=1
-	export WRF_CHEM=1
-	export WRF_KPP=0
-    
 	#export GIT_EXTERNAL_DIFF=/Users/asoto/bin/gitdfdiff.sh
 
 elif [[ $platform == 'linux' ]]; then
