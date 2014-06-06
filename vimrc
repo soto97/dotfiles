@@ -1,5 +1,5 @@
 set autoindent
-set smartindent
+set nosmartindent
 set tabstop=4
 set shiftwidth=4
 set showmatch
@@ -44,7 +44,7 @@ set smartcase " Ignore case when searching lowercase
 " Editing space options *********************************************** 
 " Highlite last column to help keep text width reasonable
 if exists('+colorcolumn')
-    set colorcolumn=75
+    set colorcolumn=72
 endif
 " Display line numbers.
 set number
