@@ -34,3 +34,7 @@ echo "Moving any existing dotfiles from ~ to $olddir"
 	echo " "
 done
 
+# For some reason, I get a recursive vim directory in dotfiles.
+# This line removes the recursive vim directory.
+# Yes, it's a kludge. Deal with it.
+rm $dir/vim/vim
