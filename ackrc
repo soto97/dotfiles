@@ -1,0 +1,11 @@
+#ack is a tool like grep, designed for programmers with large trees of heterogeneous source code
+ 
+#to install ack, see http://betterthangrep.com/
+#to use ack, launch terminal (mac osx) and type 'ack <some_keywords>'
+#ack will search all files in the current directory & sub-directories
+ 
+#here's how I have my config file setup. this file is managed by my dotfiles
+setup located at ~/dotfiles and is maintained in the assocaited git repository.
+
+--ignore-case
+ 
