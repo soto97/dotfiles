@@ -5,7 +5,6 @@
 #ack will search all files in the current directory & sub-directories
  
 #here's how I have my config file setup. this file is managed by my dotfiles
-setup located at ~/dotfiles and is maintained in the assocaited git repository.
+#setup located at ~/dotfiles and is maintained in the assocaited git repository.
 
 --ignore-case
- 
