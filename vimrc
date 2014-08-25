@@ -1,8 +1,11 @@
-set autoindent
 set nosmartindent
+set expandtab
 set tabstop=4
+set softtabstop=4
 set shiftwidth=4
 set showmatch
+set tw=79
+:set formatoptions+=t
 "set guioptions-=T
 set vb t_vb=
 set ruler
@@ -54,7 +57,7 @@ nnoremap <F5> :set nonumber!<CR>:set foldcolumn=0<CR>
 
 " Python syntax and other featurs ****************************************
 syntax on
-filetype indent plugin on
+filetype indent plugin off
 "The following two lines can be added to source files.
 "# vim: tabstop=8 expandtab shiftwidth=4 softtabstop=4
 "set modeline
