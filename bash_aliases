@@ -28,13 +28,14 @@ alias ssh='ssh -X'
 alias ncview='ncview -no_auto_overlay'
 
 # Machine aliases
-alias pleiades='ssh asoto1@pfe'    # ssh into Pleiades at NASA Ames
+alias pleiades='ssh -X asoto1@pfe'    # ssh into Pleiades at NASA Ames
 
 
 # OS specific aliases
 
 if [[ $platform == 'osx' ]]; then
 	alias gvim='mvim'
+    alias vim='vi'
 elif [[ $platform == 'linux' ]]; then
 	alias gvim='vim'
 fi
