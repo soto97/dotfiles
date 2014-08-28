@@ -68,9 +68,9 @@ elif [[ $platform == 'linux' ]]; then
 	export WRFIO_NCD_LARGE_FILE_SUPPORT=1;
 	export JASPERLIB=/usr/lib64;
 	export JASPERINC=/usr/include/jasper;
-	export WRF_CHEM=1;
+	export WRF_CHEM=0;
 	export WRF_KPP=0;
-    export WRF_TITAN=1;
+    export WRF_TITAN=0;
 
 
 
