@@ -9,7 +9,7 @@ set tw=79
 "set guioptions-=T
 set vb t_vb=
 set ruler
-set printoptions=paper:letter,left:5pc,right:5pc,top:5pc,bottom:5pc,number:y
+set printoptions=paper:letter,left:5pc,right:5pc,top:5pc,bottom:5pc,number:y,syntax:n
 au VimLeave * :!clear
 
 set guifont=Monaco:h12
@@ -28,9 +28,7 @@ else
     set background=dark
     colorscheme solarized
 endif
-"set background=dark
 "let g:solarized_termcolors = 256
-colorscheme solarized
 
 " Status Line *****************************************************************
 set showcmd
