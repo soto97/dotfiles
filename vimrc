@@ -5,7 +5,7 @@ set softtabstop=4
 set shiftwidth=4
 set showmatch
 set tw=79
-:set formatoptions+=t
+set formatoptions+=t
 "set guioptions-=T
 set vb t_vb=
 set ruler
