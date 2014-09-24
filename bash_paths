@@ -11,7 +11,14 @@ fi
 if [[ $platform == 'osx' ]]; then
   
   export NCARG_ROOT=/Users/asoto/bin/ncl_ncarg-5.2.1.MacOS_10.5_i386_nodap_gcc401                                  
-  export PATH="$NCARG_ROOT/bin:/usr/local/bin:/usr/local/git/bin:/usr/bin:/bin:/usr/sbin:/usr/local/sbin:/sbin:/opt/X11/bin:/Users/asoto/bin:/Users/asoto/bin/janus-scripts:/Users/asoto/bin/pycollapse:/Users/asoto/.rvm/bin:/usr/local/lib/python2.7/site-packages:/usr/local/lib/python2.7/site-packages"
+  export PATH="$NCARG_ROOT/bin:/usr/local/bin:/usr/local/git/bin"
+  export PATH="$PATH:/usr/bin:/bin:/usr/sbin:/usr/local/sbin:/sbin"
+  export PATH="$PATH:/opt/X11/bin:/Users/asoto/bin"
+  export PATH="$PATH:/Users/asoto/bin/janus-scripts"
+  export PATH="$PATH:/Users/asoto/bin/pycollapse:/Users/asoto/.rvm/bin"
+  export PATH="$PATH:/usr/local/lib/python2.7/site-packages"
+  export PATH="$PATH:/usr/local/lib/python2.7/site-packages"
+  export PATH="$PATH:/Users/asoto/.cabal/bin/:/usr/texbin"
 
   export PYTHONPATH="/usr/local/lib/python2.7/site-packages:/Users/asoto/bin/my_python_modules:$PYTHONPATH"
 
