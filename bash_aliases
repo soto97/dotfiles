@@ -30,6 +30,8 @@ alias ncview='ncview -no_auto_overlay'
 # Machine aliases
 alias pleiades='ssh -X asoto1@pfe'    # ssh into Pleiades at NASA Ames
 
+# ack aliases
+alias fack='ack --type=F' # This searches just for .F files.
 
 # OS specific aliases
 

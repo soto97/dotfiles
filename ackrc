@@ -8,3 +8,5 @@
 #setup located at ~/dotfiles and is maintained in the assocaited git repository.
 
 --ignore-case
+--type-set=F:ext:F
+
