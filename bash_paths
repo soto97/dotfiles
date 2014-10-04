@@ -11,7 +11,7 @@ fi
 if [[ $platform == 'osx' ]]; then
   
   export NCARG_ROOT=/Users/asoto/bin/ncl_ncarg-5.2.1.MacOS_10.5_i386_nodap_gcc401                                  
-  export PATH="$NCARG_ROOT/bin:/usr/local/bin:/usr/local/git/bin"
+  export PATH="$NCARG_ROOT/bin:/usr/local/bin"
   export PATH="$PATH:/usr/bin:/bin:/usr/sbin:/usr/local/sbin:/sbin"
   export PATH="$PATH:/opt/X11/bin:/Users/asoto/bin"
   export PATH="$PATH:/Users/asoto/bin/janus-scripts"
