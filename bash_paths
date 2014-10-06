@@ -18,7 +18,7 @@ if [[ $platform == 'osx' ]]; then
   export PATH="$PATH:/Users/asoto/bin/pycollapse:/Users/asoto/.rvm/bin"
   export PATH="$PATH:/usr/local/lib/python2.7/site-packages"
   export PATH="$PATH:/usr/local/lib/python2.7/site-packages"
-  export PATH="$PATH:/Users/asoto/.cabal/bin/:/usr/texbin"
+  export PATH="$PATH:/Users/asoto/.cabal/bin:/usr/texbin"
 
   export PYTHONPATH="/usr/local/lib/python2.7/site-packages:/Users/asoto/bin/my_python_modules:$PYTHONPATH"
 
