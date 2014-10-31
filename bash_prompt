@@ -10,21 +10,21 @@ elif [[ "$unamestr" == 'Darwin' ]]; then
 fi
 
 # Set a fancy prompt, slightly different for each OS.
-if [[ $platform == 'osx' ]]; then
-    PROMPT_TITLE='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}:${PWD/#$HOME/~}\007"'
-    export PROMPT_COMMAND="${PROMPT_COMMAND} ${PROMPT_TITLE}; "
-elif [[ $platform == 'linux' ]]; then
-    PROMPT_TITLE='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}:${PWD/#$HOME/~}\007"'
-    export PROMPT_COMMAND="${PROMPT_COMMAND}; "
-fi
+#if [[ $platform == 'osx' ]]; then
+#    PROMPT_TITLE='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}:${PWD/#$HOME/~}\007"'
+#    export PROMPT_COMMAND="${PROMPT_COMMAND} ${PROMPT_TITLE}; "
+#elif [[ $platform == 'linux' ]]; then
+#    PROMPT_TITLE='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}:${PWD/#$HOME/~}\007"'
+#    export PROMPT_COMMAND="${PROMPT_COMMAND}; "
+#fi
 
 # OLD:
 # set a fancy prompt
 #export PS1='\h:\w\$ '
 #export PS1="[\h] \[\e[0;31m\]\u\[\e[0m\]@\[\e[0;32m\][\w]\[\e[0m\]: "
 #export PS1="[\h] \[\033[0;31m\]\W\[\033[0m\]  $\[\e]2; [\h]\]$PWD\[\a\]\[\e]1;\]$(basename $(dirname $PWD)) /\W\[\a\] "
-#GREEN="\[\e[0;32m\]"
-#RED="\[\e[0;31m\]"
-#PLAIN="\[\e[m\]"
-#PS1="${PLAIN}[\h] ${RED}\W${PLAIN} $ "
+GREEN="\[\e[0;32m\]"
+RED="\[\e[0;31m\]"
+PLAIN="\[\e[m\]"
+PS1="${PLAIN}[\h] ${RED}\W${PLAIN} $ "
 
