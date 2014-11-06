@@ -36,10 +36,11 @@ alias fack='ack --type=F' # This searches just for .F files.
 # OS specific aliases
 
 if [[ $platform == 'osx' ]]; then
-	alias gvim='mvim'
+    alias gvim='mvim'
     alias vim='vi'
 elif [[ $platform == 'linux' ]]; then
-	alias gvim='vim'
+    alias vim='vi'
+    alias gvim='vim'
 fi
 
 
