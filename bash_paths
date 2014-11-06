@@ -40,6 +40,7 @@ if [[ $platform == 'osx' ]]; then
 elif [[ $platform == 'linux' ]]; then
   
   export PATH="/Library/Frameworks/Python.framework/Versions/Current/bin:/usr/local/bin:/usr/local/git/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Users/asoto/bin:/Users/asoto/dotfiles/bin:/Users/asoto/.rvm/bin:/home/asoto/bin:~/bin/janus-scripts:$PATH"
+  export PATH="$PATH:/usr/lib/openmpi/bin:/usr/lib64/openmpi/bin"
                                                                            
   export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH       
                                                                             
