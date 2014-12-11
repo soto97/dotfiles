@@ -22,13 +22,13 @@ alias lt='ls -ltrh '              # sort by date\
 alias lm='ls -al | less'         # pipe through 'less'\
 
 # turn on xhost for ssh sessions
-alias ssh='ssh -X'
+alias ssh='ssh -X -Y'
 
 # Application aliases
 alias ncview='ncview -no_auto_overlay'
 
 # Machine aliases
-alias pleiades='ssh -X asoto1@pfe'    # ssh into Pleiades at NASA Ames
+alias pleiades='ssh -XY asoto1@pfe'    # ssh into Pleiades at NASA Ames
 
 # ack aliases
 alias fack='ack --type=F' # This searches just for .F files.
