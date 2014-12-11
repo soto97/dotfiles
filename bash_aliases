@@ -40,7 +40,7 @@ if [[ $platform == 'osx' ]]; then
     alias vim='vi'
 elif [[ $platform == 'linux' ]]; then
     alias vim='vi'
-    alias gvim='vim'
+    #alias gvim='vim'
 fi
 
 
