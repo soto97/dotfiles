@@ -14,6 +14,7 @@ if [[ $platform == 'osx' ]]; then
   export PATH="$NCARG_ROOT/bin:/usr/local/bin"
   export PATH="$PATH:/usr/bin:/bin:/usr/sbin:/usr/local/sbin:/sbin"
   export PATH="$PATH:/opt/X11/bin:/Users/asoto/bin"
+  export PATH="$PATH:/Users/asoto/Documents/code/hupia"
   export PATH="$PATH:/Users/asoto/bin/janus-scripts"
   export PATH="$PATH:/Users/asoto/bin/pycollapse:/Users/asoto/.rvm/bin"
   export PATH="$PATH:/usr/local/lib/python2.7/site-packages"
