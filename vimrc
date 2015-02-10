@@ -4,12 +4,12 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set showmatch
-set tw=79
-set formatoptions+=t
+"set tw=79
+"set formatoptions+=t
 "set guioptions-=T
 set vb t_vb=
 set ruler
-set printoptions=paper:letter,left:5pc,right:5pc,top:5pc,bottom:5pc,number:y,syntax:n
+set printoptions=paper:letter,left:5pc,right:5pc,top:5pc,bottom:5pc,number:y,syntax:y
 au VimLeave * :!clear
 
 set guifont=Monaco:h12
@@ -60,3 +60,6 @@ filetype indent plugin off
 "# vim: tabstop=8 expandtab shiftwidth=4 softtabstop=4
 "set modeline
 au FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
+au FileType python set formatoptions+=t
+au FileType python set tw=79
+
