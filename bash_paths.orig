@@ -21,10 +21,14 @@ if [[ $platform == 'osx' ]]; then
   export PATH="$PATH:/usr/local/lib/python2.7/site-packages"
   export PATH="$PATH:/Users/asoto/.cabal/bin:/usr/texbin"
 
+<<<<<<< HEAD
+  export PYTHONPATH="/usr/local/lib/python2.7/site-packages:/Users/asoto/bin/my_python_modules:$PYTHONPATH:/Users/asoto/Documents/code/hupia"
+=======
 #  export PYTHONPATH="/usr/local/lib/python2.7/site-packages"
 #  export PYTHONPATH="$PYTHONPATH:/Users/asoto/bin/my_python_modules"
   export PYTHONPATH="/Users/asoto/bin/my_python_modules"
   export PYTHONPATH="$PYTHONPATH:/Users/asoto/Documents/code/hupia"
+>>>>>>> e33e512882a2a0b1d962c08d82a05e8e85785e85
 
   NETCDF="/usr/local/"
   export NETCDF
