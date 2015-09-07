@@ -1,0 +1,60 @@
+#bash_paths
+
+platform='unknown'
+unamestr=`uname`
+if [[ "$unamestr" == 'Linux' ]]; then
+   platform='linux'
+elif [[ "$unamestr" == 'Darwin' ]]; then
+   platform='osx'
+fi
+
+if [[ $platform == 'osx' ]]; then
+  
+  export NCARG_ROOT=/Users/asoto/bin/ncl_ncarg-5.2.1.MacOS_10.5_i386_nodap_gcc401                                  
+  export PATH="$NCARG_ROOT/bin:/usr/local/bin"
+  export PATH="$PATH:/usr/bin:/bin:/usr/sbin:/usr/local/sbin:/sbin"
+  export PATH="$PATH:/opt/X11/bin:/Users/asoto/bin"
+  export PATH="$PATH:/Users/asoto/Documents/code/hupia"
+  export PATH="$PATH:/Users/asoto/bin/janus-scripts"
+  export PATH="$PATH:/Users/asoto/bin/pycollapse:/Users/asoto/.rvm/bin"
+  export PATH="$PATH:/usr/local/lib/python2.7/site-packages"
+  export PATH="$PATH:/usr/local/lib/python2.7/site-packages"
+  export PATH="$PATH:/Users/asoto/.cabal/bin:/usr/texbin"
+
+<<<<<<< HEAD
+  export PYTHONPATH="/usr/local/lib/python2.7/site-packages:/Users/asoto/bin/my_python_modules:$PYTHONPATH:/Users/asoto/Documents/code/hupia"
+=======
+#  export PYTHONPATH="/usr/local/lib/python2.7/site-packages"
+#  export PYTHONPATH="$PYTHONPATH:/Users/asoto/bin/my_python_modules"
+  export PYTHONPATH="/Users/asoto/bin/my_python_modules"
+  export PYTHONPATH="$PYTHONPATH:/Users/asoto/Documents/code/hupia"
+>>>>>>> e33e512882a2a0b1d962c08d82a05e8e85785e85
+
+  NETCDF="/usr/local/"
+  export NETCDF
+  JASPERLIB="/usr/local/lib/"
+  export JASPERLIB
+  JASPERINC="/usr/local/include/jasper/"
+  export JASPERINC
+  FC="/usr/local/bin/gfortran"
+  export FC
+  F90="/usr/local/bin/gfortran"
+  export F90
+  WRFIO_NCD_LARGE_FILE_SUPPORT=1
+  export WRFIO_NCD_LARGE_FILE_SUPPORT
+
+  [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
+
+elif [[ $platform == 'linux' ]]; then
+  
+  export PATH="/Library/Frameworks/Python.framework/Versions/Current/bin:/usr/local/bin:/usr/local/git/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Users/asoto/bin:/Users/asoto/dotfiles/bin:/Users/asoto/.rvm/bin:/home/asoto/bin:~/bin/janus-scripts:~/code/hupia:$PATH:"
+  export PATH="$PATH:/usr/lib/openmpi/bin:/usr/lib64/openmpi/bin"
+                                                                           
+#  export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH       
+                                                                            
+  [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
+
+fi
+
+
+
