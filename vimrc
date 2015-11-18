@@ -22,6 +22,7 @@ endif
 syntax on
 " feel free to choose :set background=light for a different style
 if has('gui_running')
+    let g:solarized_contrast="high"
     set background=light
     colorscheme solarized  
 else
