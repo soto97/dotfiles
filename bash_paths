@@ -15,6 +15,7 @@ if [[ $platform == 'osx' ]]; then
   export PATH="$PATH:/usr/bin:/bin:/usr/sbin:/usr/local/sbin:/sbin"
   export PATH="$PATH:/opt/X11/bin:/Users/asoto/bin"
   export PATH="$PATH:/Users/asoto/Documents/code/hupia"
+  export PATH="$PATH:/Users/asoto/Dropbox/work/code/hitran"
   export PATH="$PATH:/Users/asoto/Documents/code/titanium"
   export PATH="$PATH:/Users/asoto/bin/janus-scripts"
   export PATH="$PATH:/Users/asoto/bin/pycollapse:/Users/asoto/.rvm/bin"
@@ -22,12 +23,14 @@ if [[ $platform == 'osx' ]]; then
   export PATH="$PATH:/usr/local/lib/python2.7/site-packages"
   export PATH="$PATH:/Users/asoto/.cabal/bin:/usr/texbin"
   export PATH="$HOME/.rbenv/bin:$PATH"
+  # added for Anaconda3 4.1.1
+  export PATH="/Users/asoto/anaconda/bin:$PATH"
 
   export RBENV_ROOT=/usr/local/var/rbenv
   if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
   eval "$(rbenv init -)"
 
-  export PYTHONPATH="/usr/local/lib/python2.7/site-packages"
+#  export PYTHONPATH="/usr/local/lib/python2.7/site-packages"
   export PYTHONPATH="$PYTHONPATH:/Users/asoto/bin/my_python_modules"
 #  export PYTHONPATH="/Users/asoto/bin/my_python_modules"
   export PYTHONPATH="$PYTHONPATH:/Users/asoto/Documents/code/hupia"
