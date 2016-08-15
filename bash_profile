@@ -41,7 +41,6 @@ unset files
 #    export PROMPT_COMMAND="${PROMPT_COMMAND}; "
 #fi
 
-
-
-
-
+if [[ $platform == 'osx' ]]; then
+    test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+fi
