@@ -25,7 +25,8 @@ if [[ $platform == 'osx' ]]; then
   export PATH="$HOME/.rbenv/bin:$PATH"
   # added for Anaconda3 4.1.1
   export PATH="/Users/asoto/anaconda/bin:$PATH"
-
+  export PATH="/Users/asoto/Documents/code/my_mcnp/MCNP_CODE/bin:$PATH"
+  
   export RBENV_ROOT=/usr/local/var/rbenv
   if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
   eval "$(rbenv init -)"
@@ -49,6 +50,13 @@ if [[ $platform == 'osx' ]]; then
   export WRFIO_NCD_LARGE_FILE_SUPPORT
 
   [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
+
+  # Increase the stacksize -- for MCNP
+  ulimit -S -s hard
+ 
+  # DATAPATH for MCNP cross-section data
+  export DATAPATH
+  DATAPATH="/Users/asoto/Documents/code/my_mcnp/MCNP_DATA"
 
 elif [[ $platform == 'linux' ]]; then
   
