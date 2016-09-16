@@ -26,7 +26,8 @@ if [[ $platform == 'osx' ]]; then
     MKL_NUM_THREADS=1
     export MKL_NUM_THREADS
 
-    source `brew --prefix`/Library/Contributions/brew_bash_completion.sh
+#    source `brew --prefix`/Library/Contributions/brew_bash_completion.sh
+    source $(brew --prefix)/etc/bash_completion.d/brew
 
     SSHAGENT=/usr/bin/ssh-agent
     SSHAGENTARGS="-s"
