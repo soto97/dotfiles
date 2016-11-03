@@ -27,8 +27,11 @@ if [[ $platform == 'osx' ]]; then
     export MKL_NUM_THREADS
 
 #    source `brew --prefix`/Library/Contributions/brew_bash_completion.sh
-    source $(brew --prefix)/etc/bash_completion.d/brew
-
+#    source $(brew --prefix)/etc/bash_completion.d/brew
+#    source $(brew --prefix)/etc/bash_completion
+  if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    . $(brew --prefix)/etc/bash_completion
+  fi
     SSHAGENT=/usr/bin/ssh-agent
     SSHAGENTARGS="-s"
     if [ -z "$SSH_AUTH_SOCK" -a -x "$SSHAGENT" ]; then
