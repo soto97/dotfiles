@@ -12,7 +12,7 @@ set ruler
 set printoptions=paper:letter,left:5pc,right:5pc,top:5pc,bottom:5pc,number:y,syntax:y
 au VimLeave * :!clear
 
-set guifont=Monaco:h12
+set guifont=Monaco:h13
 
 if ! has("gui_running")
     set t_Co=256
