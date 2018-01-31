@@ -58,6 +58,7 @@ alias jn='jupyter notebook &'  # This starts the Jupyter Notebook.
 if [[ $platform == 'osx' ]]; then
     alias gvim='mvim'
     alias vim='vi'
+    alias byword='open -a Byword'
 elif [[ $platform == 'linux' ]]; then
     alias vim='vi'
     alias gvim='vi'
