@@ -19,14 +19,11 @@ if [[ $platform == 'osx' ]]; then
   export PATH="$PATH:/Users/asoto/Documents/code/titanium"
   export PATH="$PATH:/Users/asoto/bin/janus-scripts"
   export PATH="$PATH:/Users/asoto/bin/pycollapse:/Users/asoto/.rvm/bin"
-  export PATH="$PATH:/usr/local/lib/python2.7/site-packages"
-  export PATH="$PATH:/usr/local/lib/python2.7/site-packages"
   export PATH="$PATH:/Users/asoto/.cabal/bin"
   export PATH="$PATH:/Library/TeX/texbin"
   export PATH="$HOME/.rbenv/bin:$PATH"
-  # added for Anaconda3 4.1.1
   export PATH="/Users/asoto/anaconda/bin:$PATH"
-  export PATH="/Users/asoto/Documents/code/my_mcnp/MCNP_CODE/bin:$PATH"
+  export PATH="$PATH:/Users/asoto/Documents/code/my_mcnp/MCNP_CODE/bin"
   
   export RBENV_ROOT=/usr/local/var/rbenv
   if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
