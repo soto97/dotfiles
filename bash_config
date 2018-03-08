@@ -67,8 +67,8 @@ elif [[ $platform == 'linux' ]]; then
 	fi
     
 	# The following exports are for the Titan mesoscale WRF.
-	export HDF5LIB_fOR_NETCDF=/usr/lib64/hdf5/lib;
-	export NETCDF=/usr/lib64/netcdf4_c;
+	export HDF5LIB_fOR_NETCDF=/usr/local;
+	export NETCDF=/usr/local;
 	export WRFIO_NCD_LARGE_FILE_SUPPORT=1;
 	export JASPERLIB=/usr/lib64;
 	export JASPERINC=/usr/include/jasper;
