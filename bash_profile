@@ -45,4 +45,5 @@ fi
 
 if [[ $platform == 'osx' ]]; then
     test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+    . /Users/asoto/Applications/exelis/idl85/bin/idl_setup.bash
 fi
