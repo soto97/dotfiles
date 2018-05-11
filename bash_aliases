@@ -51,7 +51,7 @@ alias fack='ack --type=F' # This searches just for .F files.
 # Jupyter aliases
 #
 alias jn='jupyter notebook &'  # This starts the Jupyter Notebook.
-
+alias jl='jupyter lab &'       # This starts the Jupyter Lab interface.
 #
 # OS specific aliases
 #
