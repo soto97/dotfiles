@@ -12,6 +12,9 @@ set ruler
 set printoptions=paper:letter,left:5pc,right:5pc,top:5pc,bottom:5pc,number:y,syntax:y
 au VimLeave * :!clear
 
+" Command to get crontab to work
+autocmd filetype crontab setlocal nobackup nowritebackup
+
 set guifont=Monaco:h13
 
 if ! has("gui_running")
