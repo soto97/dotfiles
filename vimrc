@@ -13,7 +13,7 @@ set printoptions=paper:letter,left:5pc,right:5pc,top:5pc,bottom:5pc,number:y,syn
 au VimLeave * :!clear
 
 " Command to get crontab to work
-autocmd filetype crontab setlocal nobackup nowritebackup
+"autocmd filetype crontab setlocal nobackup nowritebackup
 
 set guifont=Monaco:h13
 
