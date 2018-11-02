@@ -24,6 +24,7 @@ if [[ $platform == 'osx' ]]; then
   export PATH="$HOME/.rbenv/bin:$PATH"
   export PATH="/Users/asoto/anaconda/bin:$PATH"
   export PATH="$PATH:/Users/asoto/Documents/code/my_mcnp/MCNP_CODE/bin"
+  export PATH="$PATH:/Users/asoto/bin/planetoplot/bin"
   
   export RBENV_ROOT=/usr/local/var/rbenv
   if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
@@ -33,6 +34,8 @@ if [[ $platform == 'osx' ]]; then
   export PYTHONPATH="$PYTHONPATH:/Users/asoto/bin/my_python_modules"
 #  export PYTHONPATH="/Users/asoto/bin/my_python_modules"
   export PYTHONPATH="$PYTHONPATH:/Users/asoto/Documents/code/hupia"
+  export PYTHONPATH="$PYTHONPATH:/Users/asoto/bin/planetoplot/modules"
+
 
   NETCDF="/usr/local/"
   export NETCDF

@@ -12,6 +12,9 @@ set ruler
 set printoptions=paper:letter,left:5pc,right:5pc,top:5pc,bottom:5pc,number:y,syntax:y
 au VimLeave * :!clear
 
+" Command to get crontab to work
+"autocmd filetype crontab setlocal nobackup nowritebackup
+
 set guifont=Monaco:h13
 
 if ! has("gui_running")
@@ -21,14 +24,14 @@ endif
 
 syntax on
 " feel free to choose :set background=light for a different style
-if has('gui_running')
-    let g:solarized_contrast="high"
-    set background=light
-    colorscheme solarized  
-else
-    set background=dark
-    colorscheme solarized
-endif
+"if has('gui_running')
+"    let g:solarized_contrast="high"
+"    set background=light
+"    colorscheme solarized  
+"else
+"    set background=dark
+"    colorscheme solarized
+"endif
 "let g:solarized_termcolors = 256
 
 " Status Line *****************************************************************

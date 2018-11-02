@@ -42,7 +42,7 @@ if [[ $platform == 'osx' ]]; then
 	#export GIT_EXTERNAL_DIFF=/Users/asoto/bin/gitdfdiff.sh
 
 elif [[ $platform == 'linux' ]]; then
-    export EDITOR="vim"   # Make vim the default editor
+    export EDITOR="vi"   # Make vim the default editor
     # make ls display colors, reinforce with CLICOLOR and LSCOLORS
     export CLICOLOR=1
  
