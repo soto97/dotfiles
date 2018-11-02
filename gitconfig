@@ -1,8 +1,8 @@
 [core]
 	excludesfile = /Users/asoto/.gitignore_global
 [user]
-	name = soto97
-	email = soto97@gmail.com
+	name = Alejandro Soto
+	email = asoto@boulder.swri.edu
 [difftool "Kaleidoscope"]
 	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
 [diff]

@@ -61,8 +61,17 @@ elif [[ $platform == 'linux' ]]; then
   export PATH="/usr/local/anaconda3/bin:/usr/local/bin:/usr/local/git/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Users/asoto/bin:/Users/asoto/dotfiles/bin:/Users/asoto/.rvm/bin:/home/asoto/bin:~/bin/janus-scripts:~/code/hupia:$PATH:"
   export PATH="$PATH:/usr/lib/openmpi/bin:/usr/lib64/openmpi/bin"
                                                                            
-                                                                            
   [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
+  
+  # These ISCA related variables are for the SwRI compuater system.
+  # directory of the Isca source code
+  export GFDL_BASE=/d0/asoto/Isca 
+  # "environment" configuration for emps-gv4
+  export GFDL_ENV=swri-as
+  # temporary working directory used in running the model
+  export GFDL_WORK=/d0/asoto/isca_work
+  # directory for storing model output
+  export GFDL_DATA=/d0/asoto/isca_data
 
 fi
 
