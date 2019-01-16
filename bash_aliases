@@ -52,6 +52,39 @@ alias fack='ack --type=F' # This searches just for .F files.
 #
 alias jn='jupyter notebook &'  # This starts the Jupyter Notebook.
 alias jl='jupyter lab &'       # This starts the Jupyter Lab interface.
+
+#
+# Utility aliases 
+# from http://brettterpstra.com//2019/01/15/stuff-ive-made-and-actually-use/
+#
+
+# Aliases for the top command.
+alias cpu='top -o cpu'
+alias mem='top -o rsize' # memory
+
+# Get current external IP
+alias ip="curl icanhazip.com"
+
+# copy the working directory path
+alias cpwd='pwd|tr -d "\n"|pbcopy'
+
+# Toggle wifi (add on or off after command)
+alias wifi="networksetup -setairportpower en0"
+
+# Use ack to locate TOD* and FIXM* lines in current folder tree
+alias todos='ack --nobreak --nocolor "(TODO|FIXME):"|sed -E "s/(.*:[[:digit:]]+):.*((TODO|FIXME):.*)/\2 :>> \1/"|grep -E --color=always ":>>.*:\d+"'
+
+# Quick Look a file from Terminal
+alias ql="qlmanage -px &>/dev/null"
+
+# Search running processes for a pattern
+alias ps?="ps ax|grep -v grep|grep -iE"
+alias psgrep='psgrep -saien'
+
+# Print argument right aligned
+alias right="printf '%*s' $(tput cols)"
+
+
 #
 # OS specific aliases
 #
