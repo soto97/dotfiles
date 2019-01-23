@@ -33,6 +33,8 @@ syntax on
 "    colorscheme solarized
 "endif
 "let g:solarized_termcolors = 256
+set background=light
+colorscheme ron
 
 " Status Line *****************************************************************
 set showcmd
