@@ -92,6 +92,10 @@ if [[ $platform == 'osx' ]]; then
     alias gvim='mvim'
     alias vim='vi'
     alias byword='open -a Byword'
+    alias gcc='gcc-8'
+    alias cc='gcc-8'
+    alias g++='g++-8'
+    alias c++='c++-8'
 elif [[ $platform == 'linux' ]]; then
     alias vim='vi'
     alias gvim='vi'
