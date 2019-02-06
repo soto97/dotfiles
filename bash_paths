@@ -72,6 +72,7 @@ elif [[ $platform == 'linux' ]]; then
 #  export PATH="/home/asoto/bin/szip-2.1_mpich-3.3/bin:$PATH"
 #  export PATH="/home/asoto/bin/zlib-1.2.11_mpich-3.3/bin:$PATH"
 #  export PATH="/home/asoto/bin/
+  export PATH="$PATH:/home/linuxbrew/.linuxbrew/bin"
                                                                            
   [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
   

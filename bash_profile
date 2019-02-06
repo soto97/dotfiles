@@ -72,6 +72,8 @@ if [[ $platform == 'linux' ]]; then
     else
         start_agent;
     fi
+    
+    eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 fi
 
 # added by Anaconda3 5.3.1 installer
