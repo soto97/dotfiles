@@ -72,6 +72,10 @@ if [[ $platform == 'linux' ]]; then
     else
         start_agent;
     fi
+    
+    if [ "hostname | cut -d"." -f1" == 'eurus' ]; then 
+        eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+    fi
 fi
 
 # added by Anaconda3 5.3.1 installer
