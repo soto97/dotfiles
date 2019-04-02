@@ -15,26 +15,22 @@ au VimLeave * :!clear
 " Command to get crontab to work
 autocmd filetype crontab setlocal nobackup nowritebackup
 
-set guifont=Menlo:h13
-
-if ! has("gui_running")
-    set t_Co=256
+if has('gui_running')
+  set guifont=Menlo:h15
 endif
-"set t_Co=256
 
+let fortran_free_source=1
 syntax on
-" feel free to choose :set background=light for a different style
-"if has('gui_running')
-"    let g:solarized_contrast="high"
-"    set background=light
-"    colorscheme solarized  
-"else
-"    set background=dark
-"    colorscheme solarized
-"endif
-"let g:solarized_termcolors = 256
-set background=light
-colorscheme ron
+if has('gui_running')
+     set background=light " or light if you prefer the light version
+     let g:two_firewatch_italics=1
+     colorscheme two-firewatch
+else
+     set background=dark
+     let g:two_firewatch_italics=0
+     colorscheme two-firewatch
+endif     
+
 
 " Status Line *****************************************************************
 set showcmd
@@ -49,7 +45,7 @@ set ignorecase " Ignore case when searching
 set smartcase " Ignore case when searching lowercase
 
 " Editing space options *********************************************** 
-" Highlite last column to help keep text width reasonable
+" Highlight last column to help keep text width reasonable
 if exists('+colorcolumn')
     set colorcolumn=72
 endif
