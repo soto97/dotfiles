@@ -27,8 +27,8 @@ if has('gui_running')
      colorscheme two-firewatch
 else
      set background=dark
-     let g:two_firewatch_italics=0
-     colorscheme two-firewatch
+"     let g:two_firewatch_italics=0
+"     colorscheme two-firewatch
 endif     
 
 
