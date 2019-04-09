@@ -46,8 +46,10 @@ set smartcase " Ignore case when searching lowercase
 
 " Editing space options *********************************************** 
 " Highlight last column to help keep text width reasonable
-if exists('+colorcolumn')
-    set colorcolumn=72
+if has('gui_running')
+    if exists('+colorcolumn')
+        set colorcolumn=72
+    endif
 endif
 " Display line numbers.
 set number
