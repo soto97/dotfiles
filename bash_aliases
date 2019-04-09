@@ -96,6 +96,7 @@ if [[ $platform == 'osx' ]]; then
     alias cc='gcc-8'
     alias g++='g++-8'
     alias c++='c++-8'
+    alias nt='open . -a iterm'  # Opening a new iTerm tab with the current directory
 elif [[ $platform == 'linux' ]]; then
     alias vim='vi'
     alias gvim='vi'
