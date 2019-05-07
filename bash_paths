@@ -98,7 +98,7 @@ fi
 if [[ $machine_name == 'guabancex' ]]; then
     ISISROOT="${HOME}/isis3/isis"
     export ISISROOT
-    source $ISISROOT/scripts/isis3Startup.sh
+    #source $ISISROOT/scripts/isis3Startup.sh
 fi
 
 
