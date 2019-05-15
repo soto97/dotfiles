@@ -26,6 +26,7 @@ alias ll='ls -Fl'
 alias la='ls -Al'               # show hidden files\
 alias lt='ls -ltrh '              # sort by date\
 alias lm='ls -al | less'         # pipe through 'less'\
+alias ld='ls -d'   # list directories without listing directory contents
 
 #
 # turn on xhost for ssh sessions
