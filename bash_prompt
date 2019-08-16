@@ -9,6 +9,8 @@ elif [[ "$unamestr" == 'Darwin' ]]; then
 	platform='osx'
 fi
 
+unset PROMPT_COMMAND
+
 # Set a fancy prompt, slightly different for each OS.
 #if [[ $platform == 'osx' ]]; then
 #    PROMPT_TITLE='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}:${PWD/#$HOME/~}\007"'
