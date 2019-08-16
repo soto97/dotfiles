@@ -53,6 +53,7 @@ alias fack='ack --type=F' # This searches just for .F files.
 #
 alias jn='jupyter notebook &'  # This starts the Jupyter Notebook.
 alias jl='jupyter lab &'       # This starts the Jupyter Lab interface.
+alias jq='jupyter qtconsole &' # This starts iPython in a Jupyter QT console (pretty).
 
 #
 # Utility aliases 
