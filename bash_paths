@@ -45,6 +45,7 @@ if [[ $platform == 'osx' ]]; then
 #  export PYTHONPATH="/Users/asoto/bin/my_python_modules"
   export PYTHONPATH="$PYTHONPATH:/Users/asoto/Documents/code/hupia"
   export PYTHONPATH="$PYTHONPATH:/Users/asoto/bin/planetoplot/modules"
+  export PYTHONPATH="$PYTHONPATH:/Users/asoto/Documents/code/titanium"
 
 
   NETCDF="/usr/local/"
