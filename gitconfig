@@ -17,7 +17,7 @@
 [merge]
 	tool = Kaleidoscope
 [core]
-    editor = /usr/bin/vim
+    editor = /usr/local/bin/mvim -v
 
 
 #[difftool "sourcetree"]

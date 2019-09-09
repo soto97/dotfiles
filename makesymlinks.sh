@@ -103,5 +103,9 @@ if [ ! -d "$dir/vim/bundle/vim-airline-themes" ]; then
     echo "vim-airline-themes installed"
 fi
 
+if [ ! -d "$dir/vim/bundle/jupyter-vim" ]; then
+    cd $bundle_dir
+    git clone git@github.com:jupyter-vim/jupyter-vim.git
+fi
 echo "All Vim plugins are installed."
 
