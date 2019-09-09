@@ -38,3 +38,56 @@ done
 # This line removes the recursive vim directory.
 # Yes, it's a kludge. Deal with it.
 rm $dir/vim/vim
+
+echo "Making sure I have all of the Vim plugins installed."
+# Now make sure I have all of the vim plugins that I use.
+# First check for the plugin manager Vundle. Git clone it
+# if I don't already have it.
+if [ ! -d "$dir/vim/bundle/Vundle.vim" ]; then
+    git clone git@github.com:VundleVim/Vundle.vim.git
+    echo "Vundle installed"
+fi
+
+# An indenting plugin.
+if [ ! -d "$dir/vim/bundle/indentpython.vim" ]; then
+    git clone git@github.com:vim-scripts/indentpython.vim.git
+    echo "Indent Python installed"
+fi
+
+# A plugin to check the syntax.
+if [ ! -d "$dir/vim/bundle/syntastic" ]; then
+    git clone git@github.com:vim-syntastic/syntastic.git
+    echo "Syntastic installed"
+fi
+
+# A plugin to check thet the Python code is PEP-8 compliant.
+if [ ! -d "$dir/vim/bundle/vim-flake8" ]; then
+    git clone git@github.com:nvie/vim-flake8.git
+    "vim-flake8 installed"
+fi
+
+# A plugin that gives me a directory tree a la Atom or Sublime.
+# First the tree system itself.
+if [ ! -d "$dir/vim/bundle/nerdtree" ]; then
+    git clone git@github.com:scrooloose/nerdtree.git
+    echo "Nerdtree installed"
+fi
+# Then a way to work with tabs.
+if [ ! -d "$dir/vim/bundle/vim-nerdtree-tabs" ]; then
+    git clone git@github.com:jistr/vim-nerdtree-tabs.git
+fi
+
+# A plugin to manage the info line at the bottom of the vim screen.
+# Plus a plugin to manage the themes used for that info line.
+if [ ! -d "$dir/vim/bundle/vim-airline" ]; then
+    git clone git@github.com:vim-airline/vim-airline.git
+    echo "vim-airline installed"
+fi
+
+if [ ! -d "$dir/vim/bundle/vim-airline-themes" ]; then
+    git clone git@github.com:vim-airline/vim-airline-themes.git
+    echo "vim-airline-themes installed"
+fi
+
+echo "All Vim plugins are installed."
+
