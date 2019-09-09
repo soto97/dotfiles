@@ -56,10 +56,10 @@ if [ ! -d "$dir/vim/bundle/Vundle.vim" ]; then
 fi
 
 # An indenting plugin.
-if [ ! -d "$dir/vim/bundle/indentpython.vim" ]; then
+if [ ! -d "$dir/vim/bundle/vim-python-pep8-indent" ]; then
     cd $bundle_dir
-    git clone git@github.com:vim-scripts/indentpython.vim.git
-    echo "Indent Python installed"
+    git clone https://github.com/Vimjas/vim-python-pep8-indent.git
+    echo "Python indentor installed"
 fi
 
 # A plugin to check the syntax.
