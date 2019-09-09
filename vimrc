@@ -64,12 +64,12 @@ if has('gui_running')
      set background=light " or light if you prefer the light version
      let g:two_firewatch_italics=1
      colorscheme two-firewatch
-     let g:airline_theme='base16'
-else
+     let g:airline_theme='sol'
+ else
      set background=dark
 "     let g:two_firewatch_italics=0
 "     colorscheme two-firewatch
-     let g:airline_theme='base16'
+     let g:airline_theme='sol'
      let g:airline_powerline_fonts = 1
 endif     
 
