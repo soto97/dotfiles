@@ -92,7 +92,7 @@ alias right="printf '%*s' $(tput cols)"
 #
 if [[ $platform == 'osx' ]]; then
     alias gvim='mvim'
-    alias vim='vi'
+    alias vim='mvim -v'
     alias byword='open -a Byword'
     alias gcc='gcc-8'
     alias cc='gcc-8'
