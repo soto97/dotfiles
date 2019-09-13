@@ -68,6 +68,8 @@ if [[ $platform == 'osx' ]]; then
   # DATAPATH for MCNP cross-section data
   export DATAPATH
   DATAPATH="/Users/asoto/Documents/code/my_mcnp/MCNP_DATA"
+  
+  . /Users/asoto/bin/z/z.sh
 
 elif [[ $platform == 'linux' ]]; then
   
