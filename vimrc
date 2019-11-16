@@ -51,6 +51,7 @@ Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'vim-airline/vim-airline'    " creates an info line at the bottom
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'jupyter-vim/jupyter-vim'   " integrates Jupyter into Vim
+Plugin 'tpope/vim-fugitive'    " additional git details and controls
 
 " vim-gitgutter shows signs for line additions (+), modifications (~), 
 " or removals (-) in the vim window gutter if the file you’re modifying 
@@ -71,16 +72,22 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-" Plugin settings:
+" Plugin settings ******************************************************
+
+" For vim-gitgutter:
 set updatetime=100    " Update time for vim-gitgutter
 
+" For NERDTree:
 map <C-n> :NERDTreeToggle <CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+" For indent guide:
 let g:indent_guides_guide_size = 1
 let g:indent_guides_color_change_percent = 3
 let g:indent_guides_enable_on_vim_startup = 1
 
+" For git status line:
+let g:airline#extensions#hunks#enabled = 1
 
 "***********************************************************************
 " Syntax and appearance ************************************************
@@ -108,11 +115,12 @@ let g:airline#extensions#whitespace#enabled=0
 " whether I am running Vim in the terminal or a GUI based Vim, like 
 " GVim.
 if has('gui_running')
-    set guifont=Menlo:h16
+    set guifont=Fira_Code:h16
     set background=light 
     let g:two_firewatch_italics=1
     colorscheme two-firewatch
     let g:airline_theme='sol'
+    let g:airline_powerline_fonts = 1
 else
     set background=dark
 "     let g:two_firewatch_italics=0
