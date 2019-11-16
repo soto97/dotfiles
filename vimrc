@@ -47,7 +47,7 @@ Plugin 'scrooloose/nerdtree'    " creates a directory tree in the Vim screen
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'vim-airline/vim-airline'    " creates an info line at the bottom
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'jupyter-vim/jupyter-vim'   " integrates Jupyter into Vim
+"Plugin 'jupyter-vim/jupyter-vim'   " integrates Jupyter into Vim
 " ...
 
 " All of your Plugins must be added before the following line
@@ -144,11 +144,13 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " Setup jupyter-vim by selecting the correct python to use.
 let os = substitute(system('uname'), "\n", "", "")
 if os == "Darwin"
+    set pyxversion=3
 " Do macos-specific stuff.
     set pythonthreedll=/Users/asoto/anaconda3/bin/python
 elseif os == "Linux"
 " Do Linux-specific stuff.
-    set pythonthreedll=/usr/local/anaconda3/bin/python
+"    set pythonthreehome=/usr/local/anaconda3/bin/python
+    set pythonthreedll=/Users/asoto/anaconda3/lib/python3.7
 endif
 
 
