@@ -1,7 +1,9 @@
 " This vimrc is designed to improve my use of Vim to do Python and 
 " Fortran programming, among other tasks. 
 
+"***********************************************************************
 " General settings *****************************************************
+"***********************************************************************
 
 set nosmartindent
 set expandtab
@@ -20,8 +22,9 @@ filetype off            " required
 " Command to get crontab to work
 "autocmd filetype crontab setlocal nobackup nowritebackup
 
-
+"***********************************************************************
 " Plugins and Plugin settings ******************************************
+"***********************************************************************
 " I am using the plugin manager Vundle.vim. I learned about this from an
 " article on Real Python titled "VIM and Python – A Match Made in 
 " Heaven", which is about how to set up a powerful VIM environment that 
@@ -48,7 +51,13 @@ Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'vim-airline/vim-airline'    " creates an info line at the bottom
 Plugin 'vim-airline/vim-airline-themes'
 "Plugin 'jupyter-vim/jupyter-vim'   " integrates Jupyter into Vim
-" ...
+Plugin 'tpope/vim-fugitive'    " additional git details and controls
+
+" vim-gitgutter shows signs for line additions (+), modifications (~), 
+" or removals (-) in the vim window gutter if the file you’re modifying 
+" is in a git repo.
+Plugin 'airblade/vim-gitgutter'    
+Plugin 'nathanaelkane/vim-indent-guides'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -63,8 +72,26 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
+" Plugin settings ******************************************************
 
+" For vim-gitgutter:
+set updatetime=100    " Update time for vim-gitgutter
+
+" For NERDTree:
+map <C-n> :NERDTreeToggle <CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" For indent guide:
+let g:indent_guides_guide_size = 1
+let g:indent_guides_color_change_percent = 3
+let g:indent_guides_enable_on_vim_startup = 1
+
+" For git status line:
+let g:airline#extensions#hunks#enabled = 1
+
+"***********************************************************************
 " Syntax and appearance ************************************************
+"***********************************************************************
 " This section covers settings to get Vim and code in Vim to be legible
 " and enjoyable to read.
 "
@@ -88,11 +115,12 @@ let g:airline#extensions#whitespace#enabled=0
 " whether I am running Vim in the terminal or a GUI based Vim, like 
 " GVim.
 if has('gui_running')
-    set guifont=Menlo:h16
+    set guifont=Fira_Code:h16
     set background=light 
     let g:two_firewatch_italics=1
     colorscheme two-firewatch
     let g:airline_theme='sol'
+    let g:airline_powerline_fonts = 1
 else
     set background=dark
 "     let g:two_firewatch_italics=0
@@ -108,13 +136,17 @@ set ruler " Show ruler
 "set ch=2 " Make command line two lines high
 "match LongLineWarning '\%120v.*' " Error format when a line is longer than 120
 
+"***********************************************************************
 " Searching ************************************************************
+"***********************************************************************
 "set hlsearch  " highlight search
 "set incsearch  " Incremental search, search as you type
 set ignorecase " Ignore case when searching 
 set smartcase " Ignore case when searching lowercase
 
+"***********************************************************************
 " Editing space options *********************************************** 
+"***********************************************************************
 " Highlight last column to help keep text width reasonable
 if has('gui_running')
     if exists('+colorcolumn')
@@ -127,7 +159,9 @@ set number
 nnoremap <F5> :set nonumber!<CR>:set foldcolumn=0<CR>
 
 
+"***********************************************************************
 " Python syntax and other features ****************************************
+"***********************************************************************
 syntax on
 "filetype indent plugin off
 "The following two lines can be added to source files.
@@ -138,8 +172,6 @@ au FileType python set formatoptions+=t
 au FileType python set tw=79
 au FileType python set autoindent fileformat=unix encoding=utf-8
 
-map <C-n> :NERDTreeToggle <CR>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Setup jupyter-vim by selecting the correct python to use.
 let os = substitute(system('uname'), "\n", "", "")
