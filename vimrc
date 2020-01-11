@@ -80,6 +80,9 @@ set updatetime=100    " Update time for vim-gitgutter
 " For NERDTree:
 map <C-n> :NERDTreeToggle <CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+let g:NERDTreeHijackNetrw=0
+autocmd VimEnter * NERDTree
+autocmd VimEnter * wincmd p
 
 " For indent guide:
 let g:indent_guides_guide_size = 1
