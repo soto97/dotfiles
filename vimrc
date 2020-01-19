@@ -100,7 +100,7 @@ let g:airline#extensions#hunks#enabled = 1
 "
 
 " Let's get formatting and syntax correct for Fortran and Python.
-let fortran_free_source=1
+"let fortran_free_source=1
 let python_highlight_all=1
 syntax on
 
