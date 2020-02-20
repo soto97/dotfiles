@@ -103,8 +103,8 @@ elif [[ $platform == 'linux' ]]; then
     alias vim='vi'
     alias gvim='vi'
     if [ "hostname | cut -d"." -f1" == 'eurus' ]; then
-       python = '/usr/local/anaconda3/bin/python'
-       python3 '/usr/local/anaconda3/bin/python3' 
+       python='/usr/local/anaconda3/bin/python'
+       python3='/usr/local/anaconda3/bin/python3' 
     fi
 fi
 
