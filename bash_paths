@@ -45,6 +45,7 @@ if [[ $platform == 'osx' ]]; then
 #  export PYTHONPATH="/Users/asoto/bin/my_python_modules"
   export PYTHONPATH="$PYTHONPATH:/Users/asoto/Documents/code/hupia"
   export PYTHONPATH="$PYTHONPATH:/Users/asoto/bin/planetoplot/modules"
+  export PYTHONPATH="$PYTHONPATH:/Users/asoto/Documents/code/titanium"
 
 
   NETCDF="/usr/local/"
@@ -68,6 +69,7 @@ if [[ $platform == 'osx' ]]; then
   # DATAPATH for MCNP cross-section data
   export DATAPATH
   DATAPATH="/Users/asoto/Documents/code/my_mcnp/MCNP_DATA"
+  
 
 elif [[ $platform == 'linux' ]]; then
   
@@ -98,7 +100,7 @@ fi
 if [[ $machine_name == 'guabancex' ]]; then
     ISISROOT="${HOME}/isis3/isis"
     export ISISROOT
-    source $ISISROOT/scripts/isis3Startup.sh
+    #source $ISISROOT/scripts/isis3Startup.sh
 fi
 
 

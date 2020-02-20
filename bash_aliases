@@ -26,6 +26,7 @@ alias ll='ls -Fl'
 alias la='ls -Al'               # show hidden files\
 alias lt='ls -ltrh '              # sort by date\
 alias lm='ls -al | less'         # pipe through 'less'\
+alias ld='ls -d'   # list directories without listing directory contents
 
 #
 # turn on xhost for ssh sessions
@@ -52,6 +53,7 @@ alias fack='ack --type=F' # This searches just for .F files.
 #
 alias jn='jupyter notebook &'  # This starts the Jupyter Notebook.
 alias jl='jupyter lab &'       # This starts the Jupyter Lab interface.
+alias jq='jupyter qtconsole &' # This starts iPython in a Jupyter QT console (pretty).
 
 #
 # Utility aliases 
@@ -90,12 +92,13 @@ alias right="printf '%*s' $(tput cols)"
 #
 if [[ $platform == 'osx' ]]; then
     alias gvim='mvim'
-    alias vim='vi'
+    alias vim='mvim -v'
     alias byword='open -a Byword'
     alias gcc='gcc-8'
     alias cc='gcc-8'
     alias g++='g++-8'
     alias c++='c++-8'
+    alias nt='open . -a iterm'  # Opening a new iTerm tab with the current directory
 elif [[ $platform == 'linux' ]]; then
     alias vim='vi'
     alias gvim='vi'
