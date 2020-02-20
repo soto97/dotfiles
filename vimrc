@@ -22,75 +22,78 @@ filetype off            " required
 " Command to get crontab to work
 "autocmd filetype crontab setlocal nobackup nowritebackup
 
-"***********************************************************************
-" Plugins and Plugin settings ******************************************
-"***********************************************************************
-" I am using the plugin manager Vundle.vim. I learned about this from an
-" article on Real Python titled "VIM and Python – A Match Made in 
-" Heaven", which is about how to set up a powerful VIM environment that 
-" is geared towards wrangling Python. See:
-"
-" https://realpython.com/vim-and-python-a-match-made-in-heaven/#lets-make-an-ide
-"
-" Vundle will allow me to easily manage a number of useful plugins.
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-
-" add all your plugins here (note older versions of Vundle
-" used Bundle instead of Plugin)
-Plugin 'vim-scripts/indentpython.vim'
-"Plugin 'vim-syntastic/syntastic'
-"Plugin 'nvie/vim-flake8'
-Plugin 'scrooloose/nerdtree'    " creates a directory tree in the Vim screen
-Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'vim-airline/vim-airline'    " creates an info line at the bottom
-Plugin 'vim-airline/vim-airline-themes'
-"Plugin 'jupyter-vim/jupyter-vim'   " integrates Jupyter into Vim
-Plugin 'tpope/vim-fugitive'    " additional git details and controls
-
-" vim-gitgutter shows signs for line additions (+), modifications (~), 
-" or removals (-) in the vim window gutter if the file you’re modifying 
-" is in a git repo.
-Plugin 'airblade/vim-gitgutter'    
-Plugin 'nathanaelkane/vim-indent-guides'
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-
-" Plugin settings ******************************************************
-
-" For vim-gitgutter:
-set updatetime=100    " Update time for vim-gitgutter
-
-" For NERDTree:
-map <C-n> :NERDTreeToggle <CR>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-let g:NERDTreeHijackNetrw=0
-autocmd VimEnter * NERDTree
-autocmd VimEnter * wincmd p
-
-" For indent guide:
-let g:indent_guides_guide_size = 1
-let g:indent_guides_color_change_percent = 3
-let g:indent_guides_enable_on_vim_startup = 1
-
-" For git status line:
-let g:airline#extensions#hunks#enabled = 1
+if version >= 720
+    "***********************************************************************
+    " Plugins and Plugin settings ******************************************
+    "***********************************************************************
+    " I am using the plugin manager Vundle.vim. I learned about this from an
+    " article on Real Python titled "VIM and Python – A Match Made in 
+    " Heaven", which is about how to set up a powerful VIM environment that 
+    " is geared towards wrangling Python. See:
+    "
+    " https://realpython.com/vim-and-python-a-match-made-in-heaven/#lets-make-an-ide
+    "
+    " Vundle will allow me to easily manage a number of useful plugins.
+    
+    " set the runtime path to include Vundle and initialize
+    set rtp+=~/.vim/bundle/Vundle.vim
+    call vundle#begin()
+    
+    " let Vundle manage Vundle, required
+    Plugin 'gmarik/Vundle.vim'
+    
+    " add all your plugins here (note older versions of Vundle
+    " used Bundle instead of Plugin)
+    Plugin 'vim-scripts/indentpython.vim'
+    "Plugin 'vim-syntastic/syntastic'
+    "Plugin 'nvie/vim-flake8'
+    Plugin 'scrooloose/nerdtree'    " creates a directory tree in the Vim screen
+    Plugin 'jistr/vim-nerdtree-tabs'
+    Plugin 'vim-airline/vim-airline'    " creates an info line at the bottom
+    Plugin 'vim-airline/vim-airline-themes'
+    "Plugin 'jupyter-vim/jupyter-vim'   " integrates Jupyter into Vim
+    Plugin 'tpope/vim-fugitive'    " additional git details and controls
+    
+    " vim-gitgutter shows signs for line additions (+), modifications (~), 
+    " or removals (-) in the vim window gutter if the file you’re modifying 
+    " is in a git repo.
+    Plugin 'airblade/vim-gitgutter'    
+    Plugin 'nathanaelkane/vim-indent-guides'
+    
+    " All of your Plugins must be added before the following line
+    call vundle#end()            " required
+    filetype plugin indent on    " required
+    "
+    " Brief help
+    " :PluginList       - lists configured plugins
+    " :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+    " :PluginSearch foo - searches for foo; append `!` to refresh local cache
+    " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+    "
+    " see :h vundle for more details or wiki for FAQ
+    " Put your non-Plugin stuff after this line
+    
+    " Plugin settings ******************************************************
+    
+    " For vim-gitgutter:
+    set updatetime=100    " Update time for vim-gitgutter
+    
+    " For NERDTree:
+    map <C-n> :NERDTreeToggle <CR>
+    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+    let g:NERDTreeHijackNetrw=0
+    autocmd VimEnter * NERDTree
+    autocmd VimEnter * wincmd p
+    
+    " For indent guide:
+    let g:indent_guides_guide_size = 1
+    let g:indent_guides_color_change_percent = 3
+    let g:indent_guides_enable_on_vim_startup = 1
+    
+    " For git status line:
+    let g:airline#extensions#hunks#enabled = 1
+    
+endif
 
 "***********************************************************************
 " Syntax and appearance ************************************************
@@ -185,7 +188,7 @@ if os == "Darwin"
 elseif os == "Linux"
 " Do Linux-specific stuff.
 "    set pythonthreehome=/usr/local/anaconda3/bin/python
-    set pythonthreedll=/Users/asoto/anaconda3/lib/python3.7
+"    set pythonthreedll=/Users/asoto/anaconda3/lib/python3.7
 endif
 
 
