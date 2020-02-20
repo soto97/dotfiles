@@ -99,6 +99,7 @@ if [[ $platform == 'osx' ]]; then
     alias g++='g++-8'
     alias c++='c++-8'
     alias nt='open . -a iterm'  # Opening a new iTerm tab with the current directory
+    alias glances='glances --disable-bg'
 elif [[ $platform == 'linux' ]]; then
     alias vim='vi'
     alias gvim='vi'
