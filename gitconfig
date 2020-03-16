@@ -3,42 +3,18 @@
 [user]
 	name = Alejandro Soto
 	email = asoto@boulder.swri.edu
-[difftool "Kaleidoscope"]
-	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
 [diff]
 	tool = Kaleidoscope
-#[difftool]
-#	prompt = false
+[mergetool]
+    tool = Kaleidoscope
+	prompt = false
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
 [mergetool "Kaleidoscope"]
 	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
 	trustExitCode = true
-[mergetool]
-	prompt = false
-[merge]
-	tool = Kaleidoscope
 [core]
     editor = vim -v
 
 
-#[difftool "sourcetree"]
-#	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-#	path = 
-#[mergetool "sourcetree"]
-#	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-#	trustExitCode = true
-#[diff]
-#	tool = mvimdiff
-#	prompt = false
-#[difftool]
-#	tool = mvimdiff
-#	prompt = false
-#[difftool "mvimdiff"]
-#	cmd = mvim -f -d \"$LOCAL\" \"$REMOTE\"
-#	prompt = false
-#[merge]
-#	tool = "Kaleidoscope"
-#	conflictstyle = "Kaleidoscope"
-#	prompt = false
-##[mergetool "diffmerge"]
-##	cmd = "diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$(if test -f \"$BASE\"; then echo \"$BASE\"; else echo \"$LOCAL\"; fi)\" \"$REMOTE\""
-##	trustExitCode = true
+
