@@ -50,7 +50,10 @@ Plugin 'scrooloose/nerdtree'    " creates a directory tree in the Vim screen
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'vim-airline/vim-airline'    " creates an info line at the bottom
 Plugin 'vim-airline/vim-airline-themes'
-"Plugin 'jupyter-vim/jupyter-vim'   " integrates Jupyter into Vim
+let os = substitute(system('uname'), "\n", "", "")
+if os == "Darwin"
+"    Plugin 'jupyter-vim/jupyter-vim'   " integrates Jupyter into Vim
+endif
 Plugin 'tpope/vim-fugitive'    " additional git details and controls
 
 " vim-gitgutter shows signs for line additions (+), modifications (~), 
