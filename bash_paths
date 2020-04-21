@@ -50,10 +50,10 @@ if [[ $platform == 'osx' ]]; then
 
   NETCDF="/usr/local/"
   export NETCDF
-  JASPERLIB="/usr/local/lib/"
-  export JASPERLIB
-  JASPERINC="/usr/local/include/jasper/"
-  export JASPERINC
+#  JASPERLIB="/usr/local/lib/"
+#  export JASPERLIB
+#  JASPERINC="/usr/local/include/jasper/"
+#  export JASPERINC
   FC="/usr/local/bin/gfortran"
   export FC
   F90="/usr/local/bin/gfortran"
