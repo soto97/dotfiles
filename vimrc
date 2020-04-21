@@ -53,9 +53,9 @@ if version >= 720
     Plugin 'vim-airline/vim-airline'    " creates an info line at the bottom
     Plugin 'vim-airline/vim-airline-themes'
     let os = substitute(system('uname'), "\n", "", "")
-    if os == "Darwin"
-        Plugin 'jupyter-vim/jupyter-vim'   " integrates Jupyter into Vim
-    endif
+"    if os == "Darwin"
+"        Plugin 'jupyter-vim/jupyter-vim'   " integrates Jupyter into Vim
+"    endif
     Plugin 'tpope/vim-fugitive'    " additional git details and controls
     
     " vim-gitgutter shows signs for line additions (+), modifications (~), 
@@ -63,6 +63,10 @@ if version >= 720
     " is in a git repo.
     Plugin 'airblade/vim-gitgutter'    
     Plugin 'nathanaelkane/vim-indent-guides'
+
+    " Plugins to manage buffers
+    Plugin 'kien/ctrlp.vim'
+    Plugin 'jeetsukumaran/vim-buffergator'
     
     " All of your Plugins must be added before the following line
     call vundle#end()            " required
@@ -96,7 +100,54 @@ if version >= 720
     
     " For git status line:
     let g:airline#extensions#hunks#enabled = 1
-    
+    let g:airline#extensions#tabline#enabled = 1
+
+    " For buffer management.
+"    let g:ctrlp_map = '<c-p>'
+"    let g:ctrlp_cmd = 'CtrlP'
+
+"    " CtrlP settings.
+"    " Setup some default ignores
+"    let g:ctrlp_custom_ignore = {
+"      \ 'dir':  '\v[\/](\.(git|hg|svn)|\_site)$',
+"      \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
+"    \}
+"    " Use the directory of the current file as the cwd
+"    let g:ctrlp_working_path_mode = 'c'
+"    " Use a leader instead of the actual named binding
+"    nmap <leader>p :CtrlP<cr>
+"    " Easy bindings for its various modes
+"    nmap <leader>bb :CtrlPBuffer<cr>
+"    nmap <leader>bm :CtrlPMixed<cr>
+"    nmap <leader>bs :CtrlPMRU<cr>
+
+    " Buffergate settings.
+    " Use the right side of the screen
+    let g:buffergator_viewport_split_policy = 'R'
+"    " I want my own keymappings...
+"    let g:buffergator_suppress_keymaps = 1
+"    " Looper buffers
+"    "let g:buffergator_mru_cycle_loop = 1
+"    " Go to the previous buffer open
+"    nmap <leader>jj :BuffergatorMruCyclePrev<cr>
+"    " Go to the next buffer open
+"    nmap <leader>kk :BuffergatorMruCycleNext<cr>
+"    " View the entire list of buffers open
+"    nmap <leader>bl :BuffergatorOpen<cr>
+"    " Shared bindings from Solution #1 from earlier
+"    nmap <leader>T :enew<cr>
+"    nmap <leader>bq :bp <BAR> bd #<cr>
+
+    " I am using vim-airline, which creates a line at the bottom of the 
+    " screen in which useful information is displayed. Vim-airline is 
+    " installed and managed by Vundle above.
+    "
+    " I don't want vim-airline to tell me about white spaces. I couldn't 
+    " care less about trailing white spaces. I have better things to worry
+    " about when programming.
+    let g:airline#extensions#whitespace#enabled=0
+
+
 endif
 
 "***********************************************************************
@@ -110,15 +161,6 @@ endif
 "let fortran_free_source=1
 let python_highlight_all=1
 syntax on
-
-" I am using vim-airline, which creates a line at the bottom of the 
-" screen in which useful information is displayed. Vim-airline is 
-" installed and managed by Vundle above.
-"
-" I don't want vim-airline to tell me about white spaces. I couldn't 
-" care less about trailing white spaces. I have better things to worry
-" about when programming.
-let g:airline#extensions#whitespace#enabled=0
 
 " Now I will set the Vim colorschme, the syntax colorscheme, the 
 " vim-airline theme, and a few other items. The settings will depend on
@@ -183,34 +225,34 @@ au FileType python set tw=79
 au FileType python set autoindent fileformat=unix encoding=utf-8
 
 
-" Setup jupyter-vim by selecting the correct python to use.
-let os = substitute(system('uname'), "\n", "", "")
-if os == "Darwin"
-    set pyxversion=3
-" Do macos-specific stuff.
-    set pythonthreedll=/Users/asoto/anaconda3/bin/python
-elseif os == "Linux"
-" Do Linux-specific stuff.
-"    set pythonthreehome=/usr/local/anaconda3/bin/python
-"    set pythonthreedll=/Users/asoto/anaconda3/lib/python3.7
-endif
+"" Setup jupyter-vim by selecting the correct python to use.
+"let os = substitute(system('uname'), "\n", "", "")
+"if os == "Darwin"
+"    set pyxversion=3
+"" Do macos-specific stuff.
+"    set pythonthreedll=/Users/asoto/anaconda3/bin/python
+"elseif os == "Linux"
+"" Do Linux-specific stuff.
+""    set pythonthreehome=/usr/local/anaconda3/bin/python
+""    set pythonthreedll=/Users/asoto/anaconda3/lib/python3.7
+"endif
 
 
-" Run current file
-nnoremap <buffer> <silent> <localleader>R :JupyterRunFile<CR>
-nnoremap <buffer> <silent> <localleader>I :JupyterImportThisFile<CR>
-
-" Change to directory of current file
-nnoremap <buffer> <silent> <localleader>d :JupyterCd %:p:h<CR>
-
-" Send a selection of lines
-nnoremap <buffer> <silent> <localleader>X :JupyterSendCell<CR>
-nnoremap <buffer> <silent> <localleader>E :JupyterSendRange<CR>
-nmap     <buffer> <silent> <localleader>e <Plug>JupyterRunTextObj
-vmap     <buffer> <silent> <localleader>e <Plug>JupyterRunVisual
-
-nnoremap <buffer> <silent> <localleader>U :JupyterUpdateShell<CR>
+"" Run current file
+"nnoremap <buffer> <silent> <localleader>R :JupyterRunFile<CR>
+"nnoremap <buffer> <silent> <localleader>I :JupyterImportThisFile<CR>
+"
+"" Change to directory of current file
+"nnoremap <buffer> <silent> <localleader>d :JupyterCd %:p:h<CR>
+"
+"" Send a selection of lines
+"nnoremap <buffer> <silent> <localleader>X :JupyterSendCell<CR>
+"nnoremap <buffer> <silent> <localleader>E :JupyterSendRange<CR>
+"nmap     <buffer> <silent> <localleader>e <Plug>JupyterRunTextObj
+"vmap     <buffer> <silent> <localleader>e <Plug>JupyterRunVisual
+"
+"nnoremap <buffer> <silent> <localleader>U :JupyterUpdateShell<CR>
 
 " Debugging maps
-nnoremap <buffer> <silent> <localleader>b :PythonSetBreak<CR>
+"nnoremap <buffer> <silent> <localleader>b :PythonSetBreak<CR>
 
