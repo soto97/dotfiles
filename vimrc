@@ -148,7 +148,7 @@ if os == "Darwin"
     set pythonthreedll=/Users/asoto/anaconda3/bin/python
 elseif os == "Linux"
 " Do Linux-specific stuff.
-    set pythonthreedll=/usr/local/anaconda3/bin/python
+"    set pythonthreedll=/usr/local/anaconda3/bin/python
 endif
 
 
