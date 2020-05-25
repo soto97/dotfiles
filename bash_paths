@@ -14,7 +14,11 @@ machine_name=`hostname` # `scutil --get HostName`
 if [[ $platform == 'osx' ]]; then
   
   export PATH="/usr/local/bin"
-  export PATH="/Users/asoto/anaconda3/bin:$PATH"
+  if [[ $machine_name == 'huracan.local' ]]; then
+      export PATH="/Users/asoto/miniconda3/bin:$PATH"
+  else
+      export PATH="/Users/asoto/anaconda3/bin:$PATH"
+  fi
   export PATH="$PATH:/usr/bin"
   export PATH="$PATH:/bin"
   export PATH="$PATH:/usr/sbin"
@@ -50,10 +54,10 @@ if [[ $platform == 'osx' ]]; then
 
   NETCDF="/usr/local/"
   export NETCDF
-  JASPERLIB="/usr/local/lib/"
-  export JASPERLIB
-  JASPERINC="/usr/local/include/jasper/"
-  export JASPERINC
+#  JASPERLIB="/usr/local/lib/"
+#  export JASPERLIB
+#  JASPERINC="/usr/local/include/jasper/"
+#  export JASPERINC
   FC="/usr/local/bin/gfortran"
   export FC
   F90="/usr/local/bin/gfortran"
@@ -70,7 +74,6 @@ if [[ $platform == 'osx' ]]; then
   export DATAPATH
   DATAPATH="/Users/asoto/Documents/code/my_mcnp/MCNP_DATA"
   
-  . /Users/asoto/bin/z/z.sh
 
 elif [[ $platform == 'linux' ]]; then
   

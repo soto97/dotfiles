@@ -1,4 +1,8 @@
 channels:
   - conda-forge
   - defaults
+create_default_packages:
+  - pip
+  - ipykernel
+  - nb_conda_kernels
 auto_activate_base: false
