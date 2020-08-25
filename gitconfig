@@ -14,7 +14,7 @@
 	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
 	trustExitCode = true
 [core]
-    editor = vim -v
+    editor = vim
 
 
 

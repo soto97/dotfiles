@@ -225,17 +225,16 @@ au FileType python set tw=79
 au FileType python set autoindent fileformat=unix encoding=utf-8
 
 
-"" Setup jupyter-vim by selecting the correct python to use.
+" Setup jupyter-vim by selecting the correct python to use.
 "let os = substitute(system('uname'), "\n", "", "")
 "if os == "Darwin"
-"    set pyxversion=3
-"" Do macos-specific stuff.
+" Do macos-specific stuff.
 "    set pythonthreedll=/Users/asoto/anaconda3/bin/python
 "elseif os == "Linux"
-"" Do Linux-specific stuff.
-""    set pythonthreehome=/usr/local/anaconda3/bin/python
-""    set pythonthreedll=/Users/asoto/anaconda3/lib/python3.7
+" Do Linux-specific stuff.
+"    set pythonthreedll=/usr/local/anaconda3/bin/python
 "endif
+
 
 
 "" Run current file
