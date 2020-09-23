@@ -67,7 +67,11 @@ if version >= 720
     " Plugins to manage buffers
     Plugin 'kien/ctrlp.vim'
     Plugin 'jeetsukumaran/vim-buffergator'
-    
+   
+   " plugins for syntax highlighting Markdown files.
+   Plugin 'godlygeek/tabular'
+   Plugin 'plasticboy/vim-markdown'
+
     " All of your Plugins must be added before the following line
     call vundle#end()            " required
     filetype plugin indent on    " required
@@ -147,6 +151,10 @@ if version >= 720
     " about when programming.
     let g:airline#extensions#whitespace#enabled=0
 
+    " For Markdown files:
+    au! BufRead,BufNewFile *.markdown set filetype=mkd
+    au! BufRead,BufNewFile *.md       set filetype=mkd
+    let g:vim_markdown_folding_disabled = 1
 
 endif
 
