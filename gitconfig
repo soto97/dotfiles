@@ -1,10 +1,15 @@
 [core]
 	excludesfile = /Users/asoto/.gitignore_global
+    editor = vim
 [user]
 	name = Alejandro Soto
 	email = asoto@boulder.swri.edu
 [diff]
 	tool = Kaleidoscope
+[merge]
+	tool = Kaleidoscope
+[difftool]
+	prompt = false
 [mergetool]
     tool = Kaleidoscope
 	prompt = false
@@ -13,17 +18,11 @@
 [mergetool "Kaleidoscope"]
 	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
 	trustExitCode = true
-[core]
-    editor = vim
-
-
-
+[pull]
+    rebase = false
 [filter "lfs"]
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
 	clean = git-lfs clean -- %f
-[merge]
-	tool = Kaleidoscope
-[difftool]
-	prompt = false
+
