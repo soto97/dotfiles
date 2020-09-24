@@ -21,7 +21,7 @@ if [[ $platform == 'osx' ]]; then
     # a = black, b = red, c = green, d = brown, e = blue,
     # f = magenta g = cyan, h = light gray, x = default
     # lowercase is bold
-     export LSCOLORS=ExFxBxDxCxegedabagacad
+     export LSCOLORS=ExFxBxDxCxegedabagacEx
 
     MKL_NUM_THREADS=1
     export MKL_NUM_THREADS
