@@ -9,13 +9,15 @@ elif [[ "$unamestr" == 'Darwin' ]]; then
 fi
 
 machine_name='unknown'
-machine_name=`hostname` # `scutil --get HostName`
+#machine_name=`hostname` # `scutil --get HostName`
+machine_name=`scutil --get ComputerName`
+
 
 if [[ $platform == 'osx' ]]; then
   
   export PATH="/usr/local/bin"
   export PATH="/Users/asoto/.local/bin:$PATH"
-  if [[ $machine_name == 'huracan.local' ]]; then
+  if [[ $machine_name == 'huracan' ]]; then
       export PATH="/Users/asoto/miniconda3/bin:$PATH"
   else
       export PATH="/Users/asoto/anaconda3/bin:$PATH"
