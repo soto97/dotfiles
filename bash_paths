@@ -16,10 +16,9 @@ machine_name=`scutil --get ComputerName`
 if [[ $platform == 'osx' ]]; then
   
   export PATH="/usr/local/bin"
+  export PATH="$PATH:/Users/asoto/Documents/websites/alejandrosoto/bin"
   export PATH="/Users/asoto/.local/bin:$PATH"
-  if [[ $machine_name == 'huracan' ]]; then
-      export PATH="/Users/asoto/miniconda3/bin:$PATH"
-  else
+  if [[ $machine_name != 'huracan' ]]; then
       export PATH="/Users/asoto/anaconda3/bin:$PATH"
   fi
   export PATH="$PATH:/usr/bin"

@@ -18,6 +18,8 @@ au VimLeave * :!clear
 
 set nocompatible        " required
 filetype off            " required
+filetype plugin on
+
 
 " Command to get crontab to work
 "autocmd filetype crontab setlocal nobackup nowritebackup
@@ -49,7 +51,7 @@ if version >= 720
     "Plugin 'vim-syntastic/syntastic'
     "Plugin 'nvie/vim-flake8'
     Plugin 'scrooloose/nerdtree'    " creates a directory tree in the Vim screen
-    Plugin 'jistr/vim-nerdtree-tabs'
+    "Plugin 'jistr/vim-nerdtree-tabs' " Plugin no longer maintained.
     Plugin 'vim-airline/vim-airline'    " creates an info line at the bottom
     Plugin 'vim-airline/vim-airline-themes'
     let os = substitute(system('uname'), "\n", "", "")
@@ -71,6 +73,9 @@ if version >= 720
    " plugins for syntax highlighting Markdown files.
    Plugin 'godlygeek/tabular'
    Plugin 'plasticboy/vim-markdown'
+
+   " Tweaks needed to smooth the path to writing prose
+   Plugin 'reedes/vim-pencil'
 
     " All of your Plugins must be added before the following line
     call vundle#end()            " required
@@ -94,8 +99,8 @@ if version >= 720
     map <C-n> :NERDTreeToggle <CR>
     autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
     let g:NERDTreeHijackNetrw=0
-    autocmd VimEnter * NERDTree
-    autocmd VimEnter * wincmd p
+    "autocmd VimEnter * NERDTree
+    "autocmd VimEnter * wincmd p
     
     " For indent guide:
     let g:indent_guides_guide_size = 1
@@ -105,6 +110,7 @@ if version >= 720
     " For git status line:
     let g:airline#extensions#hunks#enabled = 1
     let g:airline#extensions#tabline#enabled = 1
+
 
     " For buffer management.
 "    let g:ctrlp_map = '<c-p>'
@@ -156,6 +162,14 @@ if version >= 720
     au! BufRead,BufNewFile *.md       set filetype=mkd
     let g:vim_markdown_folding_disabled = 1
 
+    " Settings for vim-pencil
+    let g:pencil#wrapModeDefault = 'soft'
+    augroup pencil
+        autocmd!
+        autocmd FileType markdown,mkd call pencil#init()
+        autocmd FileType text         call pencil#init()
+    augroup END
+    
 endif
 
 "***********************************************************************
@@ -166,7 +180,7 @@ endif
 "
 
 " Let's get formatting and syntax correct for Fortran and Python.
-"let fortran_free_source=1
+let fortran_free_source=1
 let python_highlight_all=1
 syntax on
 

@@ -38,6 +38,8 @@ if [[ $platform == 'osx' ]]; then
     	  eval `$SSHAGENT $SSHAGENTARGS`
     	    trap "kill $SSH_AGENT_PID" 0
 	fi
+
+    #ssh-add -A
     
 	#export GIT_EXTERNAL_DIFF=/Users/asoto/bin/gitdfdiff.sh
 
