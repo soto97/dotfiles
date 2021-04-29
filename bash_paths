@@ -21,6 +21,9 @@ if [[ $platform == 'osx' ]]; then
   if [[ $machine_name != 'huracan' ]]; then
       export PATH="/Users/asoto/anaconda3/bin:$PATH"
   fi
+  if [[ $machine_name == 'huracan' ]]; then
+      export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+  fi
   export PATH="$PATH:/usr/bin"
   export PATH="$PATH:/bin"
   export PATH="$PATH:/usr/sbin"
