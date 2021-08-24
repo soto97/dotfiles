@@ -74,6 +74,7 @@ if [[ $platform == 'osx' ]]; then
     alias atom='/Applications/Atom.app/Contents/Resources/app/atom.sh'
     alias apm='/Applications/Atom.app/Contents/Resources/app/apm/bin/apm'
     alias typora="open -a typora"
+    alias ds9="open -a /Applications/SAOImageDS9.app"
 elif [[ $platform == 'linux' ]]; then
     alias vim='vi'
     alias gvim='vi'
