@@ -9,8 +9,6 @@ elif [[ "$unamestr" == 'Darwin' ]]; then
 	platform='osx'
 fi
 
-machine_name='unknown'
-machine_name=`scutil --get ComputerName`
 
 
 unset PROMPT_COMMAND
@@ -33,9 +31,13 @@ GREEN="\[\e[0;32m\]"
 RED="\[\e[0;31m\]"
 PLAIN="\[\e[m\]"
 
-if [[ $machine_name == 'huracan' ]]; then
-    PS1="${PLAIN}[huracan] ${RED}\W${PLAIN} $ "
-else
-    PS1="${PLAIN}[\h] ${RED}\W${PLAIN} $ "
+if [[ $platform == 'osx' ]]; then
+  machine_name='unknown'
+  machine_name=`scutil --get ComputerName`
+  
+  if [[ $machine_name == 'huracan' ]]; then
+      PS1="${PLAIN}[huracan] ${RED}\W${PLAIN} $ "
+  else
+      PS1="${PLAIN}[\h] ${RED}\W${PLAIN} $ "
+  fi
 fi
-

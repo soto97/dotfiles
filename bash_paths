@@ -8,13 +8,13 @@ elif [[ "$unamestr" == 'Darwin' ]]; then
    platform='osx'
 fi
 
-machine_name='unknown'
-#machine_name=`hostname` # `scutil --get HostName`
-machine_name=`scutil --get ComputerName`
-
 
 if [[ $platform == 'osx' ]]; then
   
+  machine_name='unknown'
+  #machine_name=`hostname` # `scutil --get HostName`
+  machine_name=`scutil --get ComputerName`
+
   export PATH="/usr/local/bin"
   export PATH="$PATH:/Users/asoto/Documents/websites/alejandrosoto/bin"
   export PATH="/Users/asoto/.local/bin:$PATH"
@@ -79,7 +79,14 @@ if [[ $platform == 'osx' ]]; then
   # DATAPATH for MCNP cross-section data
   export DATAPATH
   DATAPATH="/Users/asoto/Documents/code/my_mcnp/MCNP_DATA"
-  
+
+  if [[ $machine_name == 'guabancex' ]]; then
+    ISISROOT="${HOME}/isis3/isis"
+    export ISISROOT
+    #source $ISISROOT/scripts/isis3Startup.sh
+  fi
+
+
 
 elif [[ $platform == 'linux' ]]; then
   
@@ -106,12 +113,6 @@ elif [[ $platform == 'linux' ]]; then
   # directory for storing model output
   export GFDL_DATA=/d0/asoto/isca_data
 
-fi
-
-if [[ $machine_name == 'guabancex' ]]; then
-    ISISROOT="${HOME}/isis3/isis"
-    export ISISROOT
-    #source $ISISROOT/scripts/isis3Startup.sh
 fi
 
 
