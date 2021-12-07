@@ -30,10 +30,13 @@ unset PROMPT_COMMAND
 if [[ $platform == 'osx' ]]; then
   machine_name='unknown'
   machine_name=`scutil --get ComputerName`
+
+  RED="\[\e[0;31m\]"
+  PLAIN="\[\e[m\]"
   
   if [[ $machine_name == 'huracan' ]]; then
-      PS1="${PLAIN}[huracan] ${RED}\W${PLAIN} $ "
       PROMPT_COMMAND='iterm2_set_user_var doingNow "$(command cat ~/.doing_cache)"'
+      PS1="${PLAIN}[huracan] ${RED}\W${PLAIN} $ "
   else
       PS1="${PLAIN}[\h] ${RED}\W${PLAIN} $ "
   fi
