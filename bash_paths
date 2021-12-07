@@ -45,6 +45,7 @@ if [[ $platform == 'osx' ]]; then
   export PATH="$PATH:/Users/asoto/Documents/code/my_mcnp/MCNP_CODE/bin"
   export PATH="$PATH:/Users/asoto/bin/planetoplot/bin"
   export PATH="$PATH:/Users/asoto/bin/planetwrf_scripts"
+  export PATH="$PATH:/Users/asoto/Documents/code/mtwrf_scripts"
   
   export RBENV_ROOT=/usr/local/var/rbenv
   if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
