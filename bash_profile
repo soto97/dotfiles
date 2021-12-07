@@ -38,19 +38,21 @@ done
 unset files
 
 if [[ $platform == 'osx' ]]; then
-#    PROMPT_TITLE='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}:${PWD/#$HOME/~}\007"'
-    PROMPT_TITLE='echo -ne "\033]0;[${HOSTNAME%%.*}] ${PWD/#$HOME/~}\007"'
-    export PROMPT_COMMAND="${PROMPT_COMMAND} ${PROMPT_TITLE}; "
-elif [[ $platform == 'linux' ]]; then
-#    PROMPT_TITLE='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}:${PWD/#$HOME/~}\007"'
-    PROMPT_TITLE='echo -ne "\033]0:[${HOSTNAME%%.*}] ${PWD/#$HOME/~}\007"'
-    export PROMPT_COMMAND="${PROMPT_COMMAND} "
-fi
-
-if [[ $platform == 'osx' ]]; then
     test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 #    . /Users/asoto/Applications/exelis/idl85/bin/idl_setup.bash
 fi
+
+#if [[ $platform == 'osx' ]]; then
+##    PROMPT_TITLE='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}:${PWD/#$HOME/~}\007"'
+#    PROMPT_TITLE='echo -ne "\033]0;[${HOSTNAME%%.*}] ${PWD/#$HOME/~}\007"'
+#    export PROMPT_COMMAND="${PROMPT_COMMAND} ${PROMPT_TITLE}; "
+#    #set_user_var doingNow "$(command cat ~/.doing_cache)"
+#    #source ~/bin/after_doing.sh
+#elif [[ $platform == 'linux' ]]; then
+##    PROMPT_TITLE='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}:${PWD/#$HOME/~}\007"'
+#    PROMPT_TITLE='echo -ne "\033]0:[${HOSTNAME%%.*}] ${PWD/#$HOME/~}\007"'
+#    export PROMPT_COMMAND="${PROMPT_COMMAND} "
+#fi
 
 
 if [[ $platform == 'linux' ]]; then
