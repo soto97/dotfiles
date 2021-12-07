@@ -10,9 +10,11 @@ elif [[ "$unamestr" == 'Darwin' ]]; then
 	platform='osx'
 fi
 
-machine_name='unknown'
-#machine_name=`hostname` # `scutil --get HostName`
-machine_name=`scutil --get ComputerName`
+if [[ $platform == 'osx' ]]; then
+  machine_name='unknown'
+  #machine_name=`hostname` # `scutil --get HostName`
+  machine_name=`scutil --get ComputerName`
+fi
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
@@ -84,42 +86,42 @@ if [[ $platform == 'linux' ]]; then
     fi
 fi
 
-
-if [[ $machine_name == 'huracan' ]]; then
-    # >>> conda initialize >>>
-    # !! Contents within this block are managed by 'conda init' !!
-    __conda_setup="$('/Users/asoto/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-    if [ $? -eq 0 ]; then
-        eval "$__conda_setup"
-    else
-        echo " " 
-#        if [ -f "/Users/asoto/miniconda3/etc/profile.d/conda.sh" ]; then
-# . "/Users/asoto/miniconda3/etc/profile.d/conda.sh"  # commented out by conda initialize  # commented out by conda initialize
-#        else
-# export PATH="/Users/asoto/miniconda3/bin:$PATH"  # commented out by conda initialize  # commented out by conda initialize
-#        fi
+if [[ $platform == 'osx' ]]; then
+  if [[ $machine_name == 'huracan' ]]; then
+      # >>> conda initialize >>>
+      # !! Contents within this block are managed by 'conda init' !!
+      __conda_setup="$('/Users/asoto/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+      if [ $? -eq 0 ]; then
+          eval "$__conda_setup"
+      else
+          echo " " 
+  #        if [ -f "/Users/asoto/miniconda3/etc/profile.d/conda.sh" ]; then
+  # . "/Users/asoto/miniconda3/etc/profile.d/conda.sh"  # commented out by conda initialize  # commented out by conda initialize
+  #        else
+  # export PATH="/Users/asoto/miniconda3/bin:$PATH"  # commented out by conda initialize  # commented out by conda initialize
+  #        fi
+      fi
+      unset __conda_setup
+      # <<< conda initialize <<<
+  else
+  #    # added by Anaconda3 5.3.1 installer
+  #    # >>> conda init >>>
+  #    # !! Contents within this block are managed by 'conda init' !!
+  #    __conda_setup="$(CONDA_REPORT_ERRORS=false '/Users/asoto/anaconda3/bin/conda' shell.bash hook 2> /dev/null)"
+  #    if [ $? -eq 0 ]; then
+  #        CONDA_CHANGEPS1=false \eval "$__conda_setup"
+  #    else
+  #        if [ -f "/Users/asoto/anaconda3/etc/profile.d/conda.sh" ]; then
+  ## . "/Users/asoto/anaconda3/etc/profile.d/conda.sh"  # commented out by conda initialize  # commented out by conda initialize
+  #            CONDA_CHANGEPS1=false conda activate base
+  #        else
+  #            export PATH="/Users/asoto/anaconda3/bin:$PATH"
+  #        fi
+  #    fi
+  #    unset __conda_setup
+  #    # <<< conda init <<<
+       echo " "
     fi
-    unset __conda_setup
-    # <<< conda initialize <<<
-else
-#    # added by Anaconda3 5.3.1 installer
-#    # >>> conda init >>>
-#    # !! Contents within this block are managed by 'conda init' !!
-#    __conda_setup="$(CONDA_REPORT_ERRORS=false '/Users/asoto/anaconda3/bin/conda' shell.bash hook 2> /dev/null)"
-#    if [ $? -eq 0 ]; then
-#        CONDA_CHANGEPS1=false \eval "$__conda_setup"
-#    else
-#        if [ -f "/Users/asoto/anaconda3/etc/profile.d/conda.sh" ]; then
-## . "/Users/asoto/anaconda3/etc/profile.d/conda.sh"  # commented out by conda initialize  # commented out by conda initialize
-#            CONDA_CHANGEPS1=false conda activate base
-#        else
-#            export PATH="/Users/asoto/anaconda3/bin:$PATH"
-#        fi
-#    fi
-#    unset __conda_setup
-#    # <<< conda init <<<
-     echo " "
-  fi
-
+fi
 
 
