@@ -65,15 +65,16 @@ if [[ $platform == 'osx' ]]; then
     alias gvim='mvim'
     alias vim='mvim -v'
     alias byword='open -a Byword'
-    #alias gcc='gcc-8'
-    #alias cc='gcc-8'
-    #alias g++='g++-8'
-    #alias c++='c++-8'
+    alias gcc='gcc-11'
+    alias cc='gcc-11'
+    alias g++='g++-11'
+    alias c++='c++-11'
     alias nt='open . -a iterm'  # Opening a new iTerm tab with the current directory
     alias glances='glances --disable-bg'
     alias atom='/Applications/Atom.app/Contents/Resources/app/atom.sh'
     alias apm='/Applications/Atom.app/Contents/Resources/app/apm/bin/apm'
     alias typora="open -a typora"
+    alias ds9="open -a /Applications/SAOImageDS9.app"
 elif [[ $platform == 'linux' ]]; then
     alias vim='vi'
     alias gvim='vi'
