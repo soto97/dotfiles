@@ -45,6 +45,9 @@ if [[ $platform == 'osx' ]]; then
   export PATH="$PATH:/Users/asoto/Documents/code/my_mcnp/MCNP_CODE/bin"
   export PATH="$PATH:/Users/asoto/bin/planetoplot/bin"
   export PATH="$PATH:/Users/asoto/bin/planetwrf_scripts"
+  if [[ $machine_name == 'Guataube' ]]; then
+      export PATH="$PATH:/usr/local/bin/go"
+  fi
   export PATH="$PATH:/Users/asoto/Documents/code/mtwrf_scripts"
   
   export RBENV_ROOT=/usr/local/var/rbenv
@@ -115,6 +118,3 @@ elif [[ $platform == 'linux' ]]; then
   export GFDL_DATA=/d0/asoto/isca_data
 
 fi
-
-
-
