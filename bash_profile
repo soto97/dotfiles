@@ -87,6 +87,13 @@ if [[ $platform == 'linux' ]]; then
 fi
 
 if [[ $platform == 'osx' ]]; then
+  if [[ $machine_name == 'Guataube' ]]; then
+      export BASH_SILENCE_DEPRECATION_WARNING=1
+  fi
+fi
+
+
+if [[ $platform == 'osx' ]]; then
   if [[ $machine_name == 'huracan' ]]; then
       # >>> conda initialize >>>
       # !! Contents within this block are managed by 'conda init' !!
