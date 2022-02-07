@@ -5,16 +5,24 @@
 " General settings *****************************************************
 "***********************************************************************
 
+" configure editor with tabs and nice stuff...
 set nosmartindent
 set expandtab
 set tabstop=4
 set softtabstop=4
-set shiftwidth=4
+set shiftwidth=4    " number of spaces to use for auto indent
+set autoindent      " copy indent from current line when starting a new line
+set smarttab
 set showmatch
 set vb t_vb=
-set ruler
 set printoptions=paper:letter,left:5pc,right:5pc,top:5pc,bottom:5pc,number:y,syntax:y
 au VimLeave * :!clear
+set formatoptions+=w
+au FileType gitcommit setlocal tw=72
+
+
+" make backspaces more powerfull
+set backspace=indent,eol,start
 
 set nocompatible        " required
 filetype off            " required
@@ -24,6 +32,18 @@ set encoding=utf-8
 " Command to get crontab to work
 "autocmd filetype crontab setlocal nobackup nowritebackup
 
+
+"***********************************************************************
+" Splits settings ******************************************************
+"***********************************************************************
+
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+set splitbelow
+set splitright
 
 "***********************************************************************
 " Vundle Plugins  ******************************************************
@@ -57,7 +77,7 @@ Plugin 'vim-airline/vim-airline-themes'
 " practices suggested in PEP 8.
 " Script url: https://github.com/vim-scripts/indentpython.vim
 " PEP 8 documenation: http://www.python.org/peps/pep-0008.html
-Plugin 'vim-scripts/indentpython.vim'
+"Plugin 'vim-scripts/indentpython.vim'
 
 " Syntastic is a syntax checking plugin. Syntastic can check the
 " syntax of Fortran and Python code, among many others. 
@@ -86,6 +106,15 @@ Plugin 'airblade/vim-gitgutter'
 " Indent Guides is a plugin for visually displaying indent levels in Vim.
 " Description/documentation: https://github.com/nathanaelkane/vim-indent-guides
 Plugin 'nathanaelkane/vim-indent-guides'
+
+" vim-python-pep8-indent modifies indentation behaviour to match PEP 8. 
+" This is an alternative to vim-scripts/indentpython.vim.
+" Description: https://github.com/Vimjas/vim-python-pep8-indent
+Plugin 'Vimjas/vim-python-pep8-indent'
+
+" rainbow helps you read complex code by showing different levels of 
+" parentheses in different colors !!
+Plugin 'luochen1990/rainbow'
 
 " Plugins to manage buffers
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -150,16 +179,28 @@ let g:airline#extensions#syntastic#enabled=1
 " syntastic settings
 " ******************
 
-"Syntastic has numerous options that can be configured. It is 
+"Syntastic has numerous options thatcan be configured. It is 
 " recommended that you start by adding the following lines to your 
 " vimrc, and return to them later as needed: 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 "let g:syntastic_fortran_checkers
+let g:syntastic_python_flake8_args=
+    \ '--ignore=E127,E126,E225,E226,W291,W293,E302,W503,E303,E231,E261'
+"let g:syntastic_python_pylint_args='--ignore='
+let g:syntastic_error_symbol = "✗"
+let g:syntastic_warning_symbol = "⚠"
+" let g:syntastic_style_error_symbol = "✗" 
+" let g:syntastic_style_warning_symbol = "⚠"
 
-
+" Start with no syntastic. 
+" To enable syntastic, type 'Ctrl-w e'.
+" To disenable, type 'Ctrl-w d'.
+let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes':   [],'passive_filetypes': [] }
+noremap <C-w>e :SyntasticCheck<CR>
+noremap <C-w>d :SyntasticToggleMode<CR>
 
 " **********************
 " vim-gitgutter settings 
@@ -249,6 +290,14 @@ augroup pencil
     autocmd FileType text         call pencil#init()
 augroup END
 
+" *********************
+" Misc. Plugin Settings
+" *********************
+
+" rainbow plugin settings
+"set to 0 if you want to enable it later via :RainbowToggle
+let g:rainbow_active = 1 
+
 
 "***********************************************************************
 " Syntax and appearance ************************************************
@@ -317,10 +366,10 @@ nnoremap <F5> :set nonumber!<CR>:set foldcolumn=0<CR>
 
 
 "***********************************************************************
-" Python syntax and other features ****************************************
+" Python syntax and other features *************************************
 "***********************************************************************
 syntax on
-filetype indent plugin off
+filetype indent on
 "The following two lines can be added to source files.
 "# vim: tabstop=8 expandtab shiftwidth=4 softtabstop=4
 "set modeline
@@ -328,4 +377,8 @@ au FileType python setlocal tabstop=4 expandtab shiftwidth=4 softtabstop=4
 au FileType python set formatoptions+=t
 au FileType python set tw=79
 "au FileType python set autoindent fileformat=unix encoding=utf-8
+
+" configure expanding of tabs 
+au BufRead,BufNewFile *.py set expandtab
+
 
