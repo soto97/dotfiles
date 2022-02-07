@@ -91,12 +91,27 @@ Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'jeetsukumaran/vim-buffergator'
 
-" plugins for syntax highlighting Markdown files.
+" ****************
+" Markdown plugins
+" ****************
 Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
+"Plugin 'plasticboy/vim-markdown'
 
-" Tweaks needed to smooth the path to writing prose
+" *********************
+" Writing Prose plugins
+" *********************
+
+" Rethinking vim as a writing tool.
+" Instructions: https://github.com/preservim/vim-pencil
 Plugin 'reedes/vim-pencil'
+
+" Find duplicates (dittos) in text.
+" Instructions: https://github.com/dbmrq/vim-ditto
+Plugin 'dbmrq/vim-ditto'    
+
+" Find trite phrases and other style problems.
+" Instructions: https://github.com/preservim/vim-wordy
+Plugin 'preservim/vim-wordy'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -145,6 +160,8 @@ let g:airline#extensions#tabline#enabled = 1
 
 let g:airline#extensions#syntastic#enabled=1
 
+" Status line for vim-pencil
+let g:airline_section_x = '%{PencilMode()}'
 
 " ******************
 " syntastic settings
@@ -245,8 +262,8 @@ let g:vim_markdown_folding_disabled = 1
 let g:pencil#wrapModeDefault = 'soft'
 augroup pencil
     autocmd!
-    autocmd FileType markdown,mkd call pencil#init()
-    autocmd FileType text         call pencil#init()
+    autocmd FileType markdown,mkd,md call pencil#init()
+    autocmd FileType text            call pencil#init()
 augroup END
 
 
